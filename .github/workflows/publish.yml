@@ -12,11 +12,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up JDK 11
+      - name: Set up JDK
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 17
 
       # The publishToSonatype task and the repository release need to be in the same Gradle call
       # so that the closeAndRelease task knows which staging repository was created by publishToSonatype
@@ -33,6 +33,6 @@ jobs:
           ORG_GRADLE_PROJECT_sonatypePassword: ${{ secrets.OSSRH_KEY }}
         with:
           # jobs with different JDK versions can't share caches
-          job-id: jdk11
+          job-id: jdk17
           arguments: publishToSonatype closeAndReleaseSonatypeStagingRepository
           properties: version=${{ github.event.release.tag_name }}
