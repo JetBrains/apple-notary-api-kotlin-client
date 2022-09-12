@@ -1,0 +1,61 @@
+{
+  "logFormatVersion": 1,
+  "jobId": "b0be8456-c321-4752-b3be-25e2a8aa4487",
+  "status": "Invalid",
+  "statusSummary": "Archive contains critical validation errors",
+  "statusCode": 4000,
+  "archiveFilename": "Fleet.app.zip",
+  "uploadDate": "2022-08-17T17:44:44.002Z",
+  "sha256": "992afb2e61f86693750fd35c69fac6c5776fb93aa55302e511206a4eaf790020",
+  "ticketContents": null,
+  "issues": [
+    {
+      "severity": "error",
+      "code": null,
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/bin/macos/LLDBFrontend",
+      "message": "The binary is not signed.",
+      "docUrl": null,
+      "architecture": "x86_64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/bin/macos/LLDBFrontend",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": null,
+      "architecture": "x86_64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/bin/macos/LLDBFrontend",
+      "message": "The executable does not have the hardened runtime enabled.",
+      "docUrl": null,
+      "architecture": "x86_64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/bin/macos/LLDBFrontend",
+      "message": "The binary is not signed with a valid Developer ID certificate.",
+      "docUrl": null,
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/bin/macos/LLDBFrontend",
+      "message": "The signature does not include a secure timestamp.",
+      "docUrl": null,
+      "architecture": "arm64"
+    },
+    {
+      "severity": "error",
+      "code": null,
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/bin/macos/LLDBFrontend",
+      "message": "The executable does not have the hardened runtime enabled.",
+      "docUrl": null,
+      "architecture": "arm64"
+    }
+  ]
+}

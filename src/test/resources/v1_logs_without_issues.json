@@ -1,0 +1,1327 @@
+{
+  "logFormatVersion": 1,
+  "jobId": "1269bbcc-7e57-4303-994d-6d7c5c37e11a",
+  "status": "Accepted",
+  "statusSummary": "Ready for distribution",
+  "statusCode": 0,
+  "archiveFilename": "Fleet.app.zip",
+  "uploadDate": "2022-08-26T05:34:57.910Z",
+  "sha256": "27dd2dfe922cec0ada05d5cecde59db62ea5cc9256324dadfe6322774acfc9d3",
+  "ticketContents": [
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "4c521b661e9bf6fb221c383d858ffe4236798c3d",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "d6bb2bdccfa1053d752bb6b64805103af66a543e",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "6c9e52937204afba32f69b9ab38b4e04d51c9057",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/MacOS/Fleet",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "6c9e52937204afba32f69b9ab38b4e04d51c9057",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/app/bin/fsdaemon",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "384d9f15d63d0a50b5c8b8e718f6786dd8410c44",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/app/bin/fleet",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "3053efd7e21f9840f693d4c9d29319d3303ceedd",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/app/skiko/libskiko-macos-x64.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "b6670703919ace3a7971a479b61b165c0e8cf7a2",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/app/code-cache/pty4j-0.12.7.#356c2783bac554a1d70a1efd1a8079d328990ae1f239c16625f117224a685399.jar/resources/com/pty4j/native/darwin/libpty.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "6f3dade9055f9ae9e70d51986df94ca5735f1329",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/app/code-cache/pty4j-0.12.7.#356c2783bac554a1d70a1efd1a8079d328990ae1f239c16625f117224a685399.jar/resources/com/pty4j/native/darwin/libpty.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "8858f5b62ead8a25baab86a01b201171b8155f27",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/app/code-cache/jffi-1.3.9-native.#89b47ed62b900500b595389bceef65f25363009ffed16fa3331f4dd5e7d19d9f.jar/jni/Darwin/libjffi-1.2.jnilib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "1500a6e122a58c03f578ebca346abbcf2f174fb5",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/app/code-cache/jffi-1.3.9-native.#89b47ed62b900500b595389bceef65f25363009ffed16fa3331f4dd5e7d19d9f.jar/jni/Darwin/libjffi-1.2.jnilib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "cf43ec9dd726656d3f812e0212288a64beddac02",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/app/code-cache/jna-5.11.0.#c55b568c6cf833126d8b56c0e2d25602d9ba77cffaf5418458013784c256774e.jar/com/sun/jna/darwin-aarch64/libjnidispatch.jnilib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "16df52d8494acedfa54f45946770ba849e5ca477",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/app/code-cache/jna-5.11.0.#c55b568c6cf833126d8b56c0e2d25602d9ba77cffaf5418458013784c256774e.jar/com/sun/jna/darwin-x86-64/libjnidispatch.jnilib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "aafb125dc5f0c217a34af3106d56af4cab3e91be",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libnet.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "ffa740bff26d3a4b45938bde7ca1f45be5a114f9",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libnio.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "179078c56dfcf4e37eddc14076703c9eb0cfbead",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libinstrument.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "566620c68859565e49494d2f4ca54fe4efc25fbd",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libzip.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "a42fd2d29ec47210f393df000e68e2b3c15b9d12",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libfreetype.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "8ffa02b8e9892df1f0107b2f96dbb2530a9ed11a",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libjli.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "1fad1537f67cd5012f32610b95d9295a9ffb788e",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libsplashscreen.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "d2c4bce74bec2c670280a539f4bdf8bd30385ab6",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libdt_socket.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "7e9d7516de8b29bf6a52232d72550ce584a2cadb",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libjimage.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "ef0a5a54ee1e4f6f5ee7526517bfc5295b553a35",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libosxui.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "f09d980ac57b45d856a7f0f7e0df6010089e00b8",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libjdwp.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "788fe49d1dad339e5655cb63f8dd8ae12007554c",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libawt_lwawt.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "8378462ce3f6063af1c0eb1596fbe5dd04406cd3",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libjavajpeg.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "24095036c86d226669ba6945192f898f167d3ec2",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libmlib_image.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "c4bac3b22b81029ea1caeaa4abc610734eb4bc2b",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libmanagement.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "3356535589b0993ead1847ee389eb4393cb1bcb3",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libjsound.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "fec739f554dda22223b7b9ddd09de75e622f1ca1",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libjsig.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "cfaa8c38a965ae9cddbd94e0e939c87dd9f838ff",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libprefs.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "fe5fc26d09dd83ce641d07db35bbf8441729ec66",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libjawt.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "e566c3869e0005e037aece0325e48db01a3bd768",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libfontmanager.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "e4abf1f23c81d9878765d81dd8ddb21ec760a630",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/jspawnhelper",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "e8fff718a14485952d0682a119da8420757e1373",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libosxsecurity.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "e60d2353c1b5efe8d2a36becc2d78f3b72f0a465",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/liblcms.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "7b2ef3eed489d58771967b769d576ebf6b8d1b32",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libverify.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "d8da1f36aa681c16621f1c962b7749b753a97aaa",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libjava.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "fc17b4c531c87404b5d3346bafac0f82c1f20300",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libawt.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "ba68b2357e2b2411a3ee991e3adee109ed7ea250",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libosx.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "d3f35a276830760e471f3f706168dc929057efb0",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/libosxapp.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "bedbc945b11be4da33e0cc148f0796cd1145cf6f",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/server/libjvm.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "111c684a5187b51842c0c1489f9f2fb34f3afaa0",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/Home/lib/server/libjsig.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "cfaa8c38a965ae9cddbd94e0e939c87dd9f838ff",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/runtime/Contents/MacOS/libjli.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "8961a9e70251ce0023daa7b698e2fa67cec142bd",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "4c521b661e9bf6fb221c383d858ffe4236798c3d",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "d6bb2bdccfa1053d752bb6b64805103af66a543e",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/MacOS/fleet_backend",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "4c521b661e9bf6fb221c383d858ffe4236798c3d",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/MacOS/fleet_backend",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "d6bb2bdccfa1053d752bb6b64805103af66a543e",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/bin/printenv",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "596a7ba249b5d4c17d40aaa15059df1950cd9638",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/bin/printenv",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "4465d52c17b3100a139d79bb067c75e4fc065054",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/go/lib/dlv/macarm/dlv",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "aa19aceac0dd0db6b2bf0fbc23cb3057c015bba1",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/go/lib/dlv/mac/dlv",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "146e234160a5b238744c3dd021687e58a47e98cc",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_darwin_39_64.cpython-39-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "8c9f7b7fb7fbfac62e0d8b809b9309235449a391",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_darwin_39_64.cpython-39-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "5a3aae3c09e8053a8028e360c5630e75e5f89a37",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_darwin_37_64.cpython-37m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "ee9fe46251d42b2b116f882895fe4ca9d4e01e06",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_darwin_37_64.cpython-37m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "c9f46d2429bd80c8c9441151dd12800820c0ffc9",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_darwin_310_64.cpython-310-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "a3164a1cdac337ff718a46b25de37d28e601bba4",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_darwin_310_64.cpython-310-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "533a1f8ab54ab68e5673a4a507a9221be4b2114a",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_darwin_27_64.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "503d328a3a000c576c75488c98bb99ae7f4f3a77",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_darwin_27_64.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "602a15ebe498d9ec8fea9f73358855e308b1696d",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_darwin_38_64.cpython-38-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "69ded261e8ebf4013470b9c5f18d13a3753ef592",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_darwin_38_64.cpython-38-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "0c6eaa5061f291d16195216c9deeb514ec73ed64",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_darwin_36_64.cpython-36m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "fb4b7b031e88df42cef151c562869eabbaf15133",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_darwin_36_64.cpython-36m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "bc9b0937518722824b692cae723c55452a05675b",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/pydevd_attach_to_process/attach_x86_64.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "acff778d27f5a24f3dff508082656f3d624e960a",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/pydevd_attach_to_process/attach_x86.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "ed1bfdfce3d85ecbe9f37da4ff8b21e606deb2f7",
+      "arch": "i386"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-36m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "581ce1d9579e409c6e94296e4d17e99b5df2fc33",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-36m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "96cd37ff7033575b5f9b1f93b83aae049d17ae9f",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_38_64.cpython-38-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "271847d4a2b93d4ced7574041041c0fe2d82c6e6",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_38_64.cpython-38-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "1d4370f9084ed0492ead904887dc22eb37a48a6c",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-310-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "198e0a24c74318038f1a71fccbc096c24f17dfc0",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-310-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "2cf34e5b1f3ba4eeb7b207423fb775049c9ff270",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_36_64.cpython-36m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "328bb6b8e1c54ae3cf98fe308ed6f5b1b4e4afa9",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_36_64.cpython-36m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "8634359f7c7e56349320fc1ff53d7a2fefebac32",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_37_64.cpython-37m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "76b1ced585573f8caaeee55c42f4c70fd5b57015",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_37_64.cpython-37m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "95af3b947000dd727812e957f599fae4406cc3e0",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-39-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "60c4f1d8b1a6e5b6d48f5463051bcd99ddb52097",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-39-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "33b07834b39d7a7b180fd55cebde74c05d0a88dd",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-37m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "2a9c0987ac1b654a3172c7415ed0eca027f3494d",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-37m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "5d84de75a08c4d5b0d644762a9ccf4c612891cd0",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_310_64.cpython-310-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "6a6ecbe18a766567c8597801f645c535ed3dc290",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_310_64.cpython-310-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "48b0b035b1ad4e6d5d27f2304c79ed8adab842f0",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-38-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "f9f2472d546bd12daec4fe8e07e4d97d5d601d9c",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-38-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "085132dfe94b21cdb72a9383a77e9bd3bec9b03f",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_39_64.cpython-39-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "8e842c1643fd6b7026325af6c7ab8ca555b4dce3",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_39_64.cpython-39-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "b202385cd412d61511373e9d677845053fff4077",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_bundle/pydevd_cython_darwin_39_64.cpython-39-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "8c9f7b7fb7fbfac62e0d8b809b9309235449a391",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_bundle/pydevd_cython_darwin_39_64.cpython-39-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "5a3aae3c09e8053a8028e360c5630e75e5f89a37",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_bundle/pydevd_cython_darwin_37_64.cpython-37m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "ee9fe46251d42b2b116f882895fe4ca9d4e01e06",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_bundle/pydevd_cython_darwin_37_64.cpython-37m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "c9f46d2429bd80c8c9441151dd12800820c0ffc9",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_bundle/pydevd_cython_darwin_310_64.cpython-310-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "a3164a1cdac337ff718a46b25de37d28e601bba4",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_bundle/pydevd_cython_darwin_310_64.cpython-310-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "533a1f8ab54ab68e5673a4a507a9221be4b2114a",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_bundle/pydevd_cython_darwin_27_64.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "503d328a3a000c576c75488c98bb99ae7f4f3a77",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_bundle/pydevd_cython_darwin_27_64.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "602a15ebe498d9ec8fea9f73358855e308b1696d",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_bundle/pydevd_cython_darwin_38_64.cpython-38-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "69ded261e8ebf4013470b9c5f18d13a3753ef592",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_bundle/pydevd_cython_darwin_38_64.cpython-38-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "0c6eaa5061f291d16195216c9deeb514ec73ed64",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_bundle/pydevd_cython_darwin_36_64.cpython-36m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "fb4b7b031e88df42cef151c562869eabbaf15133",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_bundle/pydevd_cython_darwin_36_64.cpython-36m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "bc9b0937518722824b692cae723c55452a05675b",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/pydevd_attach_to_process/attach_x86_64.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "acff778d27f5a24f3dff508082656f3d624e960a",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/pydevd_attach_to_process/attach_x86.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "ed1bfdfce3d85ecbe9f37da4ff8b21e606deb2f7",
+      "arch": "i386"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-36m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "581ce1d9579e409c6e94296e4d17e99b5df2fc33",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-36m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "96cd37ff7033575b5f9b1f93b83aae049d17ae9f",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_38_64.cpython-38-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "271847d4a2b93d4ced7574041041c0fe2d82c6e6",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_38_64.cpython-38-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "1d4370f9084ed0492ead904887dc22eb37a48a6c",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-310-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "198e0a24c74318038f1a71fccbc096c24f17dfc0",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-310-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "2cf34e5b1f3ba4eeb7b207423fb775049c9ff270",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_36_64.cpython-36m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "328bb6b8e1c54ae3cf98fe308ed6f5b1b4e4afa9",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_36_64.cpython-36m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "8634359f7c7e56349320fc1ff53d7a2fefebac32",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_37_64.cpython-37m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "76b1ced585573f8caaeee55c42f4c70fd5b57015",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_37_64.cpython-37m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "95af3b947000dd727812e957f599fae4406cc3e0",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-39-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "60c4f1d8b1a6e5b6d48f5463051bcd99ddb52097",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-39-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "33b07834b39d7a7b180fd55cebde74c05d0a88dd",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-37m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "2a9c0987ac1b654a3172c7415ed0eca027f3494d",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-37m-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "5d84de75a08c4d5b0d644762a9ccf4c612891cd0",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_310_64.cpython-310-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "6a6ecbe18a766567c8597801f645c535ed3dc290",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_310_64.cpython-310-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "48b0b035b1ad4e6d5d27f2304c79ed8adab842f0",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-38-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "f9f2472d546bd12daec4fe8e07e4d97d5d601d9c",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-38-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "085132dfe94b21cdb72a9383a77e9bd3bec9b03f",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_39_64.cpython-39-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "8e842c1643fd6b7026325af6c7ab8ca555b4dce3",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/python/debugger-eggs-output/pydevd-pycharm.egg/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_39_64.cpython-39-darwin.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "b202385cd412d61511373e9d677845053fff4077",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/maven/lib/maven3/lib/jansi-1.17.1.jar/META-INF/native/osx/libjansi.jnilib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "d8eb1534ffb04310daf83af4424a721643ddd371",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/maven/lib/maven3/lib/jansi-native/osx/libjansi.jnilib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "d8eb1534ffb04310daf83af4424a721643ddd371",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/java/lib/debugger-memory-agent.jar/bin/libmemory_agent.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "034b22e22f950d31a4fea1ba2ac91d6ea9b05d83",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/java/lib/debugger-memory-agent.jar/bin/libmemory_agent.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "2983fc568eb9011d3c6c8fc1a3fbdf54bfef2fc7",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/kotlinc/lib/kotlin-daemon-client.jar/net/rubygrapefruit/platform/osx-i386/libnative-platform.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "2c4eb1888041bb8e1f549d97c4c9ae30cf009eb1",
+      "arch": "i386"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/kotlinc/lib/kotlin-daemon-client.jar/net/rubygrapefruit/platform/osx-i386/libnative-platform-curses.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "6bd48e78650f0f2c44ab83f86a96943903da9193",
+      "arch": "i386"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/kotlinc/lib/kotlin-daemon-client.jar/net/rubygrapefruit/platform/osx-amd64/libnative-platform.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "b8c3a4cb99c4c9bbb25316182292116cc27605cc",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/kotlinc/lib/kotlin-daemon-client.jar/net/rubygrapefruit/platform/osx-amd64/libnative-platform-curses.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "38e4e01503174298fe9088240078d7b4cc9a15a3",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/kotlinc/lib/kotlin-compiler.jar/META-INF/native/osx/libjansi.jnilib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "2990278c8cdf2a076f0a129a5742379a51c9fecb",
+      "arch": "i386"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/kotlinc/lib/kotlin-compiler.jar/META-INF/native/osx/libjansi.jnilib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "9fb3a15278d01502960248af5f3d7f723a40e0a0",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/kotlinc/lib/kotlin-compiler.jar/com/sun/jna/darwin/libjnidispatch.jnilib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "daf6ab6f0c41a0e7aa10b5236291ce29414bdd6f",
+      "arch": "i386"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/kotlinc/lib/kotlin-compiler.jar/com/sun/jna/darwin/libjnidispatch.jnilib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "24ed2dce3f63d42330e1a19c686f881d50256912",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/lib/kotlinc_kotlin-compiler-common.jar/net/rubygrapefruit/platform/osx-i386/libnative-platform.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "2c4eb1888041bb8e1f549d97c4c9ae30cf009eb1",
+      "arch": "i386"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/lib/kotlinc_kotlin-compiler-common.jar/net/rubygrapefruit/platform/osx-i386/libnative-platform-curses.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "6bd48e78650f0f2c44ab83f86a96943903da9193",
+      "arch": "i386"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/lib/kotlinc_kotlin-compiler-common.jar/net/rubygrapefruit/platform/osx-amd64/libnative-platform.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "b8c3a4cb99c4c9bbb25316182292116cc27605cc",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/lib/kotlinc_kotlin-compiler-common.jar/net/rubygrapefruit/platform/osx-amd64/libnative-platform-curses.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "38e4e01503174298fe9088240078d7b4cc9a15a3",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/lib/jps/kotlin-jps-plugin.jar/net/rubygrapefruit/platform/osx-i386/libnative-platform.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "2c4eb1888041bb8e1f549d97c4c9ae30cf009eb1",
+      "arch": "i386"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/lib/jps/kotlin-jps-plugin.jar/net/rubygrapefruit/platform/osx-i386/libnative-platform-curses.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "6bd48e78650f0f2c44ab83f86a96943903da9193",
+      "arch": "i386"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/lib/jps/kotlin-jps-plugin.jar/net/rubygrapefruit/platform/osx-amd64/libnative-platform.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "b8c3a4cb99c4c9bbb25316182292116cc27605cc",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/Kotlin/lib/jps/kotlin-jps-plugin.jar/net/rubygrapefruit/platform/osx-amd64/libnative-platform-curses.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "38e4e01503174298fe9088240078d7b4cc9a15a3",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/gradle/lib/gradle-api-7.4.jar/net/rubygrapefruit/platform/osx-amd64/libnative-platform.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "3589f3482e87c537e821bef2b53798218331a634",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/gradle/lib/gradle-api-7.4.jar/net/rubygrapefruit/platform/osx-amd64/libnative-platform-curses.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "95d76ea3fa7f1b51fdb958c8dd27ff5290d83751",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/gradle/lib/gradle-api-7.4.jar/net/rubygrapefruit/platform/osx-amd64/libnative-platform-file-events.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "e2c77877ebe234b68268b611b0856e78eede6fec",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/gradle/lib/gradle-api-7.4.jar/net/rubygrapefruit/platform/osx-aarch64/libnative-platform.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "21659feb5e0e384c10aeb216f07d23be5256f35c",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/gradle/lib/gradle-api-7.4.jar/net/rubygrapefruit/platform/osx-aarch64/libnative-platform-curses.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "a10264d6d3831c83840561283336d403eca65b5a",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/gradle/lib/gradle-api-7.4.jar/net/rubygrapefruit/platform/osx-aarch64/libnative-platform-file-events.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "b7c03dd33a1a7c4d823fb74b4dba02e3c1710849",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/plugins/gradle/lib/gradle-api-7.4.jar/META-INF/native/osx/libjansi.jnilib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "d8eb1534ffb04310daf83af4424a721643ddd371",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/bin/jfr",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "9a72fc051f60c822438601dd4215f6977fd4f44b",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/bin/jdb",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "407c1e316dcb8291526ba4c720a978688726c75c",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/bin/jstack",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "14ec13cca69aab6fa4154a0eb72a300ced26cad0",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/bin/rmiregistry",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "390beabebc169853246ef91d71e40284007220d2",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/bin/jcmd",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "4644a18bf1d62ebf9bdbf462d01731d4e022f428",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/bin/jrunscript",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "f0491d9aa93d23c9d94770e1c04c63355c496325",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/bin/jps",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "646b258e577dbd55528f229b0faaf4f87ac17464",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/bin/java",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "c31fc4a32f334d9bd44311a7f6a843b6b929a206",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/bin/jhsdb",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "8f67dfb42162d9997feb0f53e91aea3180459c41",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/bin/javac",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "9998540f33ecfd7af3c7018f3e28743e5b7458fe",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/bin/keytool",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "521dc2dbc11af72109e3f26391259fd310fe29b1",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/bin/jmap",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "7f94eb60b530214e92abf6b8dde0ea5b48664c39",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/bin/jstat",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "f8d5b3c4a973b2b367fa025593885a1602a075d7",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/bin/serialver",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "a1d721ef55952c4dc75c969779e7d6275dc5008d",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/bin/javadoc",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "182e03e54715d809d355dee2ce47377c4f25998a",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/bin/jinfo",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "f43af36fc17487d3160329761cf1b6040661f0e2",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libnet.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "b044f3f4725148454ab7cb279d69527a58afcd41",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libnio.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "83951fd7ebb7661c5970060794bf3ed2f9e3041f",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libinstrument.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "e0bf75e5815a4b6539d53c10fed813c3d080e0d8",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libzip.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "5e1304ecee5464d8b8dba07adb467e735373f061",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libfreetype.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "4d9f5e23956b02c932bf946ba17c7a9ac6074685",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libjli.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "62df0287f60fe7844792b533b168be3ade7a4c9c",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libsplashscreen.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "894b3f633858b09ff09c0e0bc1fc31c4674e0941",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libmanagement_ext.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "9842179d5f6ff8365479b47ff856ba2739a9f79f",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libdt_socket.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "81fb22d3325bf3ad1020e39a17147ab445583568",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libj2pkcs11.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "4dba02eb00a7a5c10fabc3825c4c47a7a7ec2d1c",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libjimage.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "be2bbc5c61ed837f1883bcb079aa003d6aae0a0e",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libosxkrb5.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "b88403c82216a56477ac5c46f834c39dfc772955",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libosxui.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "312a2a6a6a6eb6c68751935c3b159272c4622623",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libmanagement_agent.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "a8d64549ffb17720973c70bbcfb0aa36e711ea72",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/librmi.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "9a91075144ecd0f374bdf74d6d893c7f85e194b0",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libjdwp.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "7d0c16fb7d67edacde24cbbfc42f5ee3127aa0a5",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libawt_lwawt.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "3179a10cda3812e9ea2365eeb998e00d085dce4d",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libjavajpeg.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "f1c6c6ee1a82b515cb46cbb5ffa61860e5bf942a",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libmlib_image.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "d016e0e7646b83077a488dd8ee32ae07e5569cd4",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libmanagement.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "d1bfc7e71077dcf59bcc25324807263f9b9995c4",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libjsound.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "0761525771abba84494b9653bd016477a6cb07d0",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libj2pcsc.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "e589f226ebf22534d8ba4e36ea9ca687868a361f",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libjsig.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "10582d183c768633109ad45c218f5edcb148f457",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libprefs.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "333b2eeae039265db83f3101f67af7f4b6550fff",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libjawt.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "5d731e4fc2c63b9775510991bf174e22b1b669f3",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libattach.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "a992968f5d3b9d2c5b790fcb128906f4c248e613",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libfontmanager.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "23edc69ca637c782cf8ec3f5a362f6e680af0cd4",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/jspawnhelper",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "b44bb72945d677ad1203e50ed8a7f3c57281de6a",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libosxsecurity.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "953ac498670fb5a4db75abe878ed94e9c8d812b8",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libextnet.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "19b60486891e1f4639ac84bf3ba9201d61996fe2",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libjaas.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "a5afb8fc6682cc4b0edc4d9c8e2116ff8fa7c46e",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/liblcms.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "3f9f884cd80cb5dea19f4c4903ef7a8eb3633b41",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libverify.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "02dc0f12ca44fbe4fa0699b5ffeb393b9eed8149",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libj2gss.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "0d3a0f2b1ac71188d543fd979ace617d9a08c5e7",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libsaproc.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "e3b1265cfe899522c47837b70659f77e97d221ff",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libjava.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "4aa7e999318c33ffde23ec0958fb4b966cd6fe06",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libawt.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "71ef6f8bb6342dc8fe72f176b5b04e025222e28c",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libosx.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "22f8eda282378e514061a396148bd384ad956f69",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/libosxapp.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "f7d4c9a22dfa273897e3fe628839e80a1ff52da6",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/server/libjvm.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "9e182aa957e5badb017177cb54b081863a63619b",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/Home/lib/server/libjsig.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "10582d183c768633109ad45c218f5edcb148f457",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/jbr/Contents/MacOS/libjli.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "295e39b35d146b37828f7f56adbe9ff3430dc351",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/lib/jffi-1.3.9-native.jar/jni/Darwin/libjffi-1.2.jnilib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "f4c44dae15afb13efb53faeb1208dd29b7972873",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/lib/jffi-1.3.9-native.jar/jni/Darwin/libjffi-1.2.jnilib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "f48a4b724297b10f5d1c944d0c5c17f9bfcafc1b",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/lib/lz4-java.jar/net/jpountz/util/darwin/aarch64/liblz4-java.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "2cf58e91bdb104c425c225389a171773aa057ac5",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/lib/lz4-java.jar/net/jpountz/util/darwin/x86_64/liblz4-java.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "7103669feb5f3988db2b0aae62305e6c64865ed6",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/lib/pty4j.jar/resources/com/pty4j/native/darwin/libpty.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "cfe8362e2ac774268ddecfecf76e4e96df25e75c",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/lib/pty4j.jar/resources/com/pty4j/native/darwin/libpty.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "9e97b0cdb185d994188c84a2d92227970cb3046b",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/lib/jna.jar/com/sun/jna/darwin-aarch64/libjnidispatch.jnilib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "9a48bdd91e340afc952acbc64fef9f2a920e7d82",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/lib/jna.jar/com/sun/jna/darwin-x86-64/libjnidispatch.jnilib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "ae843017909a0e43ca0f86ebee118bc41ea8a041",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/lib/async-profiler.jar/binaries/macos/libasyncProfiler.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "9fbf650e5e8d64fc8fb72cff9f911bcb7fa21700",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/lib/async-profiler.jar/binaries/macos/libasyncProfiler.so",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "e801b90f6c2f3eec4682865fa4c3558b312dd863",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/lib/async-profiler.jar/binaries/macos/jattach",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "8ae68f69fdd57e1876667146da24c53b2d630736",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/lib/async-profiler.jar/binaries/macos/jattach",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "cfb1384dcaa3a39c670466faee0ded2b2c68e85d",
+      "arch": "arm64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/lib/pty4j-native/darwin/libpty.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "cfe8362e2ac774268ddecfecf76e4e96df25e75c",
+      "arch": "x86_64"
+    },
+    {
+      "path": "Fleet.app.zip/Fleet.app/Contents/Frameworks/FleetBackend 2022.3 EAP.app/Contents/lib/pty4j-native/darwin/libpty.dylib",
+      "digestAlgorithm": "SHA-256",
+      "cdhash": "9e97b0cdb185d994188c84a2d92227970cb3046b",
+      "arch": "arm64"
+    }
+  ],
+  "issues": null
+}
