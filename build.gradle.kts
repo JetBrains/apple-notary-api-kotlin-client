@@ -55,7 +55,10 @@ val dokkaJavadocJar by tasks.creating(Jar::class) {
 nexusPublishing {
     packageGroup.set("io.github.archangelx360")
     repositories {
-        sonatype()
+        sonatype {
+            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
+            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+        }
     }
 }
 
