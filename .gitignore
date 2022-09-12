@@ -30,3 +30,5 @@ gradle-app.setting
 !gradle-wrapper.properties
 
 .idea
+
+local.properties

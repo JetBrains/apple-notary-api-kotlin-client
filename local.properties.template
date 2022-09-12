@@ -1,0 +1,5 @@
+# This should not be exposed in the git repository, it should be configured by developers on their local machine
+# and *never* be versioned
+
+# signingPassword=
+# signingKey=
