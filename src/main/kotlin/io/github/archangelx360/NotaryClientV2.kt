@@ -17,7 +17,7 @@ import java.util.*
 
 class NotaryClientV2(
     private val credentials: AppStoreConnectAPIKey,
-    private val httpClient: HttpClient = HttpClient {},
+    private val httpClient: HttpClient = HttpClient(),
     private val baseUrl: String = "https://appstoreconnect.apple.com/notary/v2"
 ) {
     /**
