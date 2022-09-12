@@ -12,6 +12,7 @@ plugins {
 }
 
 group = "io.github.archangelx360"
+description = "Apple Notary API client for Kotlin"
 
 repositories {
     mavenCentral()
