@@ -1,0 +1,27 @@
+name: CI Build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        jdk-version: [11, 17]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK ${{ matrix.jdk-version }}
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: ${{ matrix.jdk-version }}
+
+      - name: Build with Gradle
+        uses: burrunan/gradle-cache-action@v1
+        with:
+          # jobs with different JDK versions can't share caches
+          job-id: jdk${{ matrix.jdk-version }}
+          arguments: build
