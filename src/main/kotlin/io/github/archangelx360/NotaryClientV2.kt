@@ -13,7 +13,6 @@ import io.ktor.client.call.*
 import io.ktor.client.plugins.*
 import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.client.request.*
-import io.ktor.client.statement.*
 import io.ktor.http.*
 import io.ktor.serialization.kotlinx.*
 import io.ktor.serialization.kotlinx.json.*
@@ -43,11 +42,9 @@ class NotaryClientV2(
         val response = httpClient.post("$baseUrl/notary/v2/submissions") {
             withAppleAuthentication(credentials)
             setBody(request)
+            expectSuccess = true
         }
-        return when (response.status) {
-            HttpStatusCode.OK -> response.body()
-            else -> error(response.toErrorLog<String>())
-        }
+        return response.body()
     }
 
     /**
@@ -58,12 +55,9 @@ class NotaryClientV2(
     suspend fun getPreviousSubmissions(): SubmissionListResponse {
         val response = httpClient.get("$baseUrl/notary/v2/submissions") {
             withAppleAuthentication(credentials)
+            expectSuccess = true
         }
-
-        return when (response.status) {
-            HttpStatusCode.OK -> response.body()
-            else -> error(response.toErrorLog<String>())
-        }
+        return response.body()
     }
 
     /**
@@ -107,14 +101,9 @@ class NotaryClientV2(
     suspend fun getSubmissionStatus(submissionId: String): SubmissionResponse {
         val response = httpClient.get("$baseUrl/notary/v2/submissions/$submissionId") {
             withAppleAuthentication(credentials)
+            expectSuccess = true
         }
-
-        return when (response.status) {
-            HttpStatusCode.OK -> response.body()
-            HttpStatusCode.Forbidden, HttpStatusCode.NotFound -> error(response.toErrorLog<ErrorResponse>())
-
-            else -> error(response.toErrorLog<String>())
-        }
+        return response.body()
     }
 
     /**
@@ -125,26 +114,14 @@ class NotaryClientV2(
     suspend fun getSubmissionLog(submissionId: String): Logs {
         val response = httpClient.get("$baseUrl/notary/v2/submissions/$submissionId/logs") {
             withAppleAuthentication(credentials)
+            expectSuccess = true
         }
-
-        return when (response.status) {
-            HttpStatusCode.OK -> {
-                val body = response.body<SubmissionLogURLResponse>()
-                val url = body.data?.attributes?.developerLogUrl
-                    ?: error("developerLogUrl is missing from response attribute")
-                val logReponse = httpClient.get(url)
-                when (logReponse.status) {
-                    HttpStatusCode.OK -> logReponse.body()
-                    else -> error(response.toErrorLog<String>())
-                }
-            }
-
-            HttpStatusCode.Forbidden, HttpStatusCode.NotFound -> error(response.toErrorLog<ErrorResponse>())
-
-            else -> error(response.toErrorLog<String>())
+        val body = response.body<SubmissionLogURLResponse>()
+        val url = body.data?.attributes?.developerLogUrl
+            ?: error("developerLogUrl is missing from response attribute")
+        val logReponse = httpClient.get(url) {
+            expectSuccess = true
         }
+        return logReponse.body()
     }
-
-    private suspend inline fun <reified T> HttpResponse.toErrorLog() =
-        "${request.method.value} ${request.url} (${status}):\n${body<T>()}"
 }

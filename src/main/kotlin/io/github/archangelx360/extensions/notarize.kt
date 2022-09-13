@@ -4,6 +4,7 @@ import io.github.archangelx360.NotaryClientV2
 import io.github.archangelx360.models.Logs
 import io.github.archangelx360.models.NewSubmissionRequest
 import io.github.archangelx360.models.SubmissionResponse
+import io.ktor.client.plugins.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withTimeoutOrNull
 import kotlinx.serialization.encodeToString
@@ -14,6 +15,7 @@ import java.security.MessageDigest
 import kotlin.io.path.readBytes
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.hours
+import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.seconds
 
 private val logger = LoggerFactory.getLogger("notary-api-kotlin-client")
@@ -24,10 +26,22 @@ data class NotarizationResult(
     val logs: Logs,
 )
 
+data class StatusPollingConfiguration(
+    val timeout: Duration = 1.hours,
+    val pollingPeriod: Duration = 30.seconds,
+    /**
+     * Whether to ignore 5xx error from Notary API and keep polling status
+     */
+    val ignoreServerError: Boolean = true,
+    val retryDelayAfterServerError: Duration = 5.minutes,
+)
+
+/**
+ * Issue notarization submission for file and wait for submission to complete
+ */
 suspend fun NotaryClientV2.notarize(
     filepath: Path,
-    timeout: Duration = 1.hours,
-    pollingFrequency: Duration = 30.seconds,
+    pollingConfiguration: StatusPollingConfiguration,
 ): NotarizationResult {
     val request = NewSubmissionRequest(
         sha256 = sha256(filepath),
@@ -48,9 +62,9 @@ suspend fun NotaryClientV2.notarize(
 
     val submissionId = submitResponse.data.id
         ?: error("Apple Notary API response is missing ID")
-    logger.info("Starting polling status for submission '$submissionId'...")
-    val status = withTimeoutOrNull(timeout) {
-        awaitSubmissionCompletion(submissionId, pollingFrequency)
+    logger.info("Starting polling status for submission '$submissionId' (with timeout of ${pollingConfiguration.timeout})...")
+    val status = withTimeoutOrNull(pollingConfiguration.timeout) {
+        awaitSubmissionCompletion(submissionId, pollingConfiguration)
     }
     if (status == null) {
         logger.info("Status polling timed out for submission '$submissionId'")
@@ -72,19 +86,31 @@ suspend fun NotaryClientV2.notarize(
 
 private suspend fun NotaryClientV2.awaitSubmissionCompletion(
     submissionId: String,
-    pollingPeriod: Duration,
+    pollingConfiguration: StatusPollingConfiguration,
 ): SubmissionResponse.Status {
     while (true) {
-        val response = getSubmissionStatus(submissionId)
+        val response = try {
+            getSubmissionStatus(submissionId)
+        } catch (e: ServerResponseException) {
+            if (pollingConfiguration.ignoreServerError) {
+                logger.warn("Ignoring call failure to Notary API, will check status again in ${pollingConfiguration.retryDelayAfterServerError}:\n$e")
+                delay(pollingConfiguration.retryDelayAfterServerError)
+                continue
+            } else {
+                throw e
+            }
+        } catch (e: Exception) {
+            throw e
+        }
         when (val status = response.data?.attributes?.status) {
             SubmissionResponse.Status.ACCEPTED,
             SubmissionResponse.Status.INVALID,
             SubmissionResponse.Status.REJECTED -> return status
 
-            SubmissionResponse.Status.IN_PROGRESS -> logger.info("Notarization still in progress, will check status again in $pollingPeriod")
-            null -> logger.warn("Notarization status unknown, will check status again in $pollingPeriod")
+            SubmissionResponse.Status.IN_PROGRESS -> logger.info("Notarization still in progress, will check status again in ${pollingConfiguration.pollingPeriod}")
+            null -> logger.warn("Notarization status unknown, will check status again in ${pollingConfiguration.pollingPeriod}")
         }
-        delay(pollingPeriod)
+        delay(pollingConfiguration.pollingPeriod)
     }
 }
 
