@@ -17,5 +17,5 @@ data class ErrorResponse(
     /**
      * Additional information about the error.
      */
-    val label: List<String>,
+    val label: List<String>?,
 )

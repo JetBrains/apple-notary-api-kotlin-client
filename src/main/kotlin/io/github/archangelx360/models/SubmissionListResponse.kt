@@ -10,8 +10,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class SubmissionListResponse(
-    val data: List<Data>,
-    val meta: Meta,
+    val data: List<Data>?,
+    val meta: Meta?,
 ) {
     /**
      * Data that describes one of your team’s previous submissions.
@@ -23,16 +23,16 @@ data class SubmissionListResponse(
         /**
          * Information about a particular submission.
          */
-        val attributes: Attributes,
+        val attributes: Attributes?,
         /**
          * The unique identifier for a submission.
          * This value matches the value that you received in the id field that appeared in the response to the Submit Software call that you used to start the submission.
          */
-        val id: String,
+        val id: String?,
         /**
          * The resource type.
          */
-        val type: String,
+        val type: String?,
     ) {
         /**
          * Information about the status of a submission.
@@ -44,15 +44,15 @@ data class SubmissionListResponse(
             /**
              * The date that you started the submission process, given in ISO 8601 format, like 2022-06-08T01:38:09.498Z.
              */
-            val createdDate: String,
+            val createdDate: String?,
             /**
              * The name that you specified in the submissionName field of the Submit Software call when you started the submission.
              */
-            val name: String,
+            val name: String?,
             /**
              * The status of the submission.
              */
-            val status: Status,
+            val status: Status?,
         )
     }
 

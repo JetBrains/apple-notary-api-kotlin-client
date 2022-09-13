@@ -17,11 +17,11 @@ import io.ktor.client.statement.*
 import io.ktor.http.*
 import io.ktor.serialization.kotlinx.*
 import io.ktor.serialization.kotlinx.json.*
-import java.io.File
-import java.util.*
+import java.nio.file.Path
 
 class NotaryClientV2(
     private val credentials: AppStoreConnectAPIKey,
+    private val baseUrl: String = "https://appstoreconnect.apple.com",
     private val httpClient: HttpClient = HttpClient {
         install(ContentNegotiation) {
             json()
@@ -33,7 +33,6 @@ class NotaryClientV2(
             accept(ContentType.Application.Json)
         }
     },
-    private val baseUrl: String = "https://appstoreconnect.apple.com",
 ) {
     /**
      * Start the process of uploading a new version of your software to the notary service.
@@ -47,10 +46,15 @@ class NotaryClientV2(
         }
         return when (response.status) {
             HttpStatusCode.OK -> response.body()
-            else -> error("${response.request.method.value} ${response.request.url} (${response.status}):\n${response.body<String>()}")
+            else -> error(response.toErrorLog<String>())
         }
     }
 
+    /**
+     * Fetch a list of your team’s previous notarization submissions.
+     *
+     * https://developer.apple.com/documentation/notaryapi/get_previous_submissions
+     */
     suspend fun getPreviousSubmissions(): SubmissionListResponse {
         val response = httpClient.get("$baseUrl/notary/v2/submissions") {
             withAppleAuthentication(credentials)
@@ -58,7 +62,7 @@ class NotaryClientV2(
 
         return when (response.status) {
             HttpStatusCode.OK -> response.body()
-            else -> error("${response.request.method.value} ${response.request.url} (${response.status}):\n${response.body<String>()}")
+            else -> error(response.toErrorLog<String>())
         }
     }
 
@@ -69,7 +73,7 @@ class NotaryClientV2(
      */
     suspend fun uploadSoftware(
         attributes: NewSubmissionResponse.Data.Attributes,
-        file: File,
+        filepath: Path,
         // The region is not given anywhere in the Apple documentation.
         // Thanks to the folks that built https://github.com/indygreg/PyOxidizer, we got it's us-west-2...
         s3Region: String = "us-west-2",
@@ -78,7 +82,7 @@ class NotaryClientV2(
             bucket = attributes.bucket
             key = attributes.`object`
             metadata = emptyMap()
-            body = file.asByteStream()
+            body = filepath.asByteStream()
         }
 
         val credentials = StaticCredentialsProvider {
@@ -87,11 +91,11 @@ class NotaryClientV2(
             sessionToken = attributes.awsSessionToken
         }
 
-        S3Client {
+        return S3Client {
             region = s3Region
             credentialsProvider = credentials
         }.use { s3 ->
-            return s3.putObject(request)
+            s3.putObject(request)
         }
     }
 
@@ -100,23 +104,16 @@ class NotaryClientV2(
      *
      * https://developer.apple.com/documentation/notaryapi/get_submission_status
      */
-    suspend fun getSubmissionStatus(submissionId: UUID): NotaryResponse<SubmissionResponse> {
+    suspend fun getSubmissionStatus(submissionId: String): SubmissionResponse {
         val response = httpClient.get("$baseUrl/notary/v2/submissions/$submissionId") {
             withAppleAuthentication(credentials)
         }
 
         return when (response.status) {
-            HttpStatusCode.OK -> {
-                val body = response.body<SubmissionResponse>()
-                NotaryResponse.Success(body)
-            }
+            HttpStatusCode.OK -> response.body()
+            HttpStatusCode.Forbidden, HttpStatusCode.NotFound -> error(response.toErrorLog<ErrorResponse>())
 
-            HttpStatusCode.Forbidden, HttpStatusCode.NotFound -> {
-                val body = response.body<ErrorResponse>()
-                NotaryResponse.Error(body)
-            }
-
-            else -> error("${response.request.method.value} ${response.request.url} (${response.status}):\n${response.body<String>()}")
+            else -> error(response.toErrorLog<String>())
         }
     }
 
@@ -125,7 +122,7 @@ class NotaryClientV2(
      *
      * https://developer.apple.com/documentation/notaryapi/get_submission_log
      */
-    suspend fun getSubmissionLog(submissionId: UUID): NotaryResponse<Logs> {
+    suspend fun getSubmissionLog(submissionId: String): Logs {
         val response = httpClient.get("$baseUrl/notary/v2/submissions/$submissionId/logs") {
             withAppleAuthentication(credentials)
         }
@@ -133,23 +130,21 @@ class NotaryClientV2(
         return when (response.status) {
             HttpStatusCode.OK -> {
                 val body = response.body<SubmissionLogURLResponse>()
-                val url = body.data.attributes.developerLogUrl
+                val url = body.data?.attributes?.developerLogUrl
+                    ?: error("developerLogUrl is missing from response attribute")
                 val logReponse = httpClient.get(url)
-                val logs = logReponse.body<Logs>()
-                NotaryResponse.Success(logs)
+                when (logReponse.status) {
+                    HttpStatusCode.OK -> logReponse.body()
+                    else -> error(response.toErrorLog<String>())
+                }
             }
 
-            HttpStatusCode.Forbidden, HttpStatusCode.NotFound -> {
-                val body = response.body<ErrorResponse>()
-                NotaryResponse.Error(body)
-            }
+            HttpStatusCode.Forbidden, HttpStatusCode.NotFound -> error(response.toErrorLog<ErrorResponse>())
 
-            else -> error("${response.request.method.value} ${response.request.url} (${response.status}):\n${response.body<String>()}")
+            else -> error(response.toErrorLog<String>())
         }
     }
-}
 
-sealed class NotaryResponse<T> {
-    class Success<T>(val response: T) : NotaryResponse<T>()
-    class Error<T>(val response: ErrorResponse) : NotaryResponse<T>()
+    private suspend inline fun <reified T> HttpResponse.toErrorLog() =
+        "${request.method.value} ${request.url} (${status}):\n${body<T>()}"
 }

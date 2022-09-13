@@ -27,7 +27,7 @@ data class NewSubmissionRequest(
      * An optional array of notifications that you want to receive when notarization finishes.
      * Omit this key if you don’t need a notification.
      */
-    val notifications: List<Notifications>,
+    val notifications: List<Notifications>?,
 ) {
     /**
      * A notification that the notary service sends you when notarization finishes.

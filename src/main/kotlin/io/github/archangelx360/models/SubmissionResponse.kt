@@ -13,11 +13,11 @@ data class SubmissionResponse(
     /**
      * Data that describes the status of the submission request.
      */
-    val data: Data,
+    val data: Data?,
     /**
      * An empty object that you can ignore.
      */
-    val meta: Meta,
+    val meta: Meta?,
 ) {
     /**
      * Information that the service provides about the status of a notarization submission.
@@ -29,15 +29,15 @@ data class SubmissionResponse(
         /**
          * The unique identifier for this submission. This value matches the value that you provided as a path parameter to the Get Submission Status call that elicited this response.
          */
-        val id: String,
+        val id: String?,
         /**
          * The resource type.
          */
-        val type: String,
+        val type: String?,
         /**
          * Information about the status of a submission.
          */
-        val attributes: Attributes,
+        val attributes: Attributes?,
     ) {
         /**
          * Information about the status of a submission.
@@ -49,15 +49,15 @@ data class SubmissionResponse(
             /**
              * The date that you started the submission process, given in ISO 8601 format, like 2022-06-08T01:38:09.498Z.
              */
-            val createdDate: String,
+            val createdDate: String?,
             /**
              * The name that you specified in the submissionName field of the Submit Software call when you started the submission.
              */
-            val name: String,
+            val name: String?,
             /**
              * The status of the submission.
              */
-            val status: Status,
+            val status: Status?,
         )
     }
 
