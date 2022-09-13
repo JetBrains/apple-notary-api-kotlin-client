@@ -10,15 +10,30 @@ import io.github.archangelx360.auth.withAppleAuthentication
 import io.github.archangelx360.models.*
 import io.ktor.client.*
 import io.ktor.client.call.*
+import io.ktor.client.plugins.*
+import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.client.request.*
+import io.ktor.client.statement.*
 import io.ktor.http.*
+import io.ktor.serialization.kotlinx.*
+import io.ktor.serialization.kotlinx.json.*
 import java.io.File
 import java.util.*
 
 class NotaryClientV2(
     private val credentials: AppStoreConnectAPIKey,
-    private val httpClient: HttpClient = HttpClient(),
-    private val baseUrl: String = "https://appstoreconnect.apple.com/notary/v2"
+    private val httpClient: HttpClient = HttpClient {
+        install(ContentNegotiation) {
+            json()
+            // Apple does not respect Accept header, so we work around to make Ktor still deserialize `application/octet-stream` as JSON
+            serialization(ContentType.Application.OctetStream, DefaultJson)
+        }
+        defaultRequest {
+            contentType(ContentType.Application.Json)
+            accept(ContentType.Application.Json)
+        }
+    },
+    private val baseUrl: String = "https://appstoreconnect.apple.com",
 ) {
     /**
      * Start the process of uploading a new version of your software to the notary service.
@@ -26,12 +41,25 @@ class NotaryClientV2(
      * https://developer.apple.com/documentation/notaryapi/submit_software
      */
     suspend fun submitSoftware(request: NewSubmissionRequest): NewSubmissionResponse {
-        val response = httpClient.post("$baseUrl/submissions") {
+        val response = httpClient.post("$baseUrl/notary/v2/submissions") {
             withAppleAuthentication(credentials)
-            contentType(ContentType.Application.Json)
             setBody(request)
         }
-        return response.body()
+        return when (response.status) {
+            HttpStatusCode.OK -> response.body()
+            else -> error("${response.request.method.value} ${response.request.url} (${response.status}):\n${response.body<String>()}")
+        }
+    }
+
+    suspend fun getPreviousSubmissions(): SubmissionListResponse {
+        val response = httpClient.get("$baseUrl/notary/v2/submissions") {
+            withAppleAuthentication(credentials)
+        }
+
+        return when (response.status) {
+            HttpStatusCode.OK -> response.body()
+            else -> error("${response.request.method.value} ${response.request.url} (${response.status}):\n${response.body<String>()}")
+        }
     }
 
     /**
@@ -42,7 +70,9 @@ class NotaryClientV2(
     suspend fun uploadSoftware(
         attributes: NewSubmissionResponse.Data.Attributes,
         file: File,
-        s3Region: String = "us-east-1"
+        // The region is not given anywhere in the Apple documentation.
+        // Thanks to the folks that built https://github.com/indygreg/PyOxidizer, we got it's us-west-2...
+        s3Region: String = "us-west-2",
     ): PutObjectResponse {
         val request = PutObjectRequest {
             bucket = attributes.bucket
@@ -71,7 +101,7 @@ class NotaryClientV2(
      * https://developer.apple.com/documentation/notaryapi/get_submission_status
      */
     suspend fun getSubmissionStatus(submissionId: UUID): NotaryResponse<SubmissionResponse> {
-        val response = httpClient.get("$baseUrl/submissions/$submissionId") {
+        val response = httpClient.get("$baseUrl/notary/v2/submissions/$submissionId") {
             withAppleAuthentication(credentials)
         }
 
@@ -86,7 +116,7 @@ class NotaryClientV2(
                 NotaryResponse.Error(body)
             }
 
-            else -> error("unsupported status code ${response.status}: ${response.body<String>()}")
+            else -> error("${response.request.method.value} ${response.request.url} (${response.status}):\n${response.body<String>()}")
         }
     }
 
@@ -96,7 +126,7 @@ class NotaryClientV2(
      * https://developer.apple.com/documentation/notaryapi/get_submission_log
      */
     suspend fun getSubmissionLog(submissionId: UUID): NotaryResponse<Logs> {
-        val response = httpClient.get("$baseUrl/submissions/$submissionId/logs") {
+        val response = httpClient.get("$baseUrl/notary/v2/submissions/$submissionId/logs") {
             withAppleAuthentication(credentials)
         }
 
@@ -114,7 +144,7 @@ class NotaryClientV2(
                 NotaryResponse.Error(body)
             }
 
-            else -> error("unsupported status code ${response.status}: ${response.body<String>()}")
+            else -> error("${response.request.method.value} ${response.request.url} (${response.status}):\n${response.body<String>()}")
         }
     }
 }

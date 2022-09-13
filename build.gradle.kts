@@ -16,7 +16,6 @@ description = "Apple Notary API client for Kotlin"
 
 repositories {
     mavenCentral()
-    maven { url = URI("https://jitpack.io") }
 }
 
 dependencies {
@@ -27,10 +26,13 @@ dependencies {
     implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
 
     implementation("aws.sdk.kotlin:s3:0.17.5-beta")
-
-    implementation("com.github.PhilJay:JWT:1.2.6")
+    implementation("com.auth0:java-jwt:4.0.0")
 
     testImplementation(kotlin("test"))
+    val coroutineVersion = "1.6.4"
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineVersion")
+    testImplementation("io.ktor:ktor-client-cio:$ktorVersion")
+    testImplementation("ch.qos.logback:logback-classic:1.4.0")
 }
 
 tasks.test {

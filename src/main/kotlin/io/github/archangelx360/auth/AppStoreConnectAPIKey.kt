@@ -1,11 +1,17 @@
 package io.github.archangelx360.auth
 
-import com.philjay.jwt.*
+import com.auth0.jwt.JWT
+import com.auth0.jwt.algorithms.Algorithm
 import io.ktor.client.request.*
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.encodeToString
-import kotlinx.serialization.json.Json
+import java.security.KeyFactory
+import java.security.PrivateKey
+import java.security.interfaces.ECPrivateKey
+import java.security.spec.PKCS8EncodedKeySpec
+import java.time.Instant
 import java.util.*
+import kotlin.time.Duration
+import kotlin.time.Duration.Companion.minutes
 
 @Serializable
 data class AppStoreConnectAPIKey(
@@ -14,44 +20,26 @@ data class AppStoreConnectAPIKey(
     val privateKey: String,
 )
 
-fun HttpRequestBuilder.withAppleAuthentication(credentials: AppStoreConnectAPIKey) {
-    val token = JWT.tokenApple(
-        credentials.issuerId,
-        credentials.keyId,
-        credentials.privateKey,
-        jsonEncoder,
-        encoder,
-        decoder
-    )
+fun HttpRequestBuilder.withAppleAuthentication(credentials: AppStoreConnectAPIKey, expiration: Duration = 10.minutes) {
+    val privateKey = generatePrivateKey(credentials.privateKey)
+    val algorithm = Algorithm.ECDSA256(null, privateKey as ECPrivateKey)
+    val token = JWT.create()
+        .withKeyId(credentials.keyId)
+        .withAudience("appstoreconnect-v1")
+        .withIssuer(credentials.issuerId)
+        .withExpiresAt(Instant.now().plusSeconds(expiration.inWholeSeconds))
+        .sign(algorithm)
     bearerAuth(token)
 }
 
-private val jsonEncoder = object : JsonEncoder<AppleJWTAuthHeader, JWTAuthPayload> {
-    override fun toJson(header: AppleJWTAuthHeader): String {
-        return Json.encodeToString(header)
-    }
+private fun generatePrivateKey(privateKey: String): PrivateKey {
+    val sanitizedKey = privateKey
+        .replace("-----BEGIN PRIVATE KEY-----", "")
+        .replace("-----END PRIVATE KEY-----", "")
+        .replace("\n", "")
 
-    override fun toJson(payload: JWTAuthPayload): String {
-        return Json.encodeToString(payload)
-    }
-}
-
-private val encoder = object : Base64Encoder {
-    override fun encodeURLSafe(bytes: ByteArray): String {
-        return Base64.getUrlEncoder().encodeToString(bytes)
-    }
-
-    override fun encode(bytes: ByteArray): String {
-        return Base64.getEncoder().encodeToString(bytes)
-    }
-}
-
-private val decoder = object : Base64Decoder {
-    override fun decode(bytes: ByteArray): ByteArray {
-        return Base64.getDecoder().decode(bytes)
-    }
-
-    override fun decode(string: String): ByteArray {
-        return Base64.getDecoder().decode(string)
-    }
+    val factory = KeyFactory.getInstance("EC")
+    val decodedPrivateKey = Base64.getDecoder().decode(sanitizedKey.toByteArray())
+    val keySpec = PKCS8EncodedKeySpec(decodedPrivateKey)
+    return factory.generatePrivate(keySpec)
 }

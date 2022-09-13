@@ -30,5 +30,5 @@ internal class LogsTest {
     }
 
     private fun readResourceFile(filepath: String) = LogsTest::class.java.getResource(filepath)?.readText()
-        ?: error("failed to read resource file")
+        ?: error("failed to read resource file $filepath")
 }
