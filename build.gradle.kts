@@ -20,10 +20,10 @@ repositories {
 
 dependencies {
     val ktorVersion = "2.1.1"
-    implementation("io.ktor:ktor-client-core:$ktorVersion")
-    implementation("io.ktor:ktor-client-logging:$ktorVersion")
-    implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+    api("io.ktor:ktor-client-core:$ktorVersion")
+    api("io.ktor:ktor-client-logging:$ktorVersion")
+    api("io.ktor:ktor-client-content-negotiation:$ktorVersion")
+    api("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
 
     implementation("aws.sdk.kotlin:s3:0.17.5-beta")
     implementation("com.auth0:java-jwt:4.0.0")
