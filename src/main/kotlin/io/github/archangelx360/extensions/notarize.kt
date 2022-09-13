@@ -41,7 +41,7 @@ data class StatusPollingConfiguration(
  */
 suspend fun NotaryClientV2.notarize(
     filepath: Path,
-    pollingConfiguration: StatusPollingConfiguration,
+    pollingConfiguration: StatusPollingConfiguration = StatusPollingConfiguration(),
 ): NotarizationResult {
     val request = NewSubmissionRequest(
         sha256 = sha256(filepath),
