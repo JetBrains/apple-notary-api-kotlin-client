@@ -11,8 +11,9 @@ import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import org.slf4j.LoggerFactory
 import java.nio.file.Path
+import java.security.DigestInputStream
 import java.security.MessageDigest
-import kotlin.io.path.readBytes
+import kotlin.io.path.inputStream
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.minutes
@@ -114,9 +115,16 @@ private suspend fun NotaryClientV2.awaitSubmissionCompletion(
     }
 }
 
-private fun sha256(path: Path): String {
-    val bytes = path.readBytes()
+fun sha256(path: Path): String {
     val md = MessageDigest.getInstance("SHA-256")
-    val digest = md.digest(bytes)
-    return digest.fold("") { str, it -> str + "%02x".format(it) }
+    DigestInputStream(path.inputStream().buffered(), md).use {
+        val buffer = ByteArray(1024)
+        while (true) {
+            val readCount: Int = it.read(buffer)
+            if (readCount < 0) {
+                break
+            }
+        }
+    }
+    return md.digest().fold("") { str, it -> str + "%02x".format(it) }
 }
