@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.2.3\-2.0.0](https://github.com/ArchangelX360/notary-api-kotlin-client/tree/0.2.3-2.0.0) (2022-09-14)
+[View commits](https://github.com/ArchangelX360/notary-api-kotlin-client/compare/0.2.2-2.0.0...0.2.3-2.0.0)
+
+
 ## [0.2.2\-2.0.0](https://github.com/ArchangelX360/notary-api-kotlin-client/tree/0.2.2-2.0.0) (2022-09-13)
 [View commits](https://github.com/ArchangelX360/notary-api-kotlin-client/compare/0.2.1-2.0.0...0.2.2-2.0.0)
 
