@@ -63,9 +63,6 @@ val client = NotaryClientV2(credentials)
 // For example retrieving your previous submissions:
 val submissions = client.getPreviousSubmissions()
 println(submissions)
-
-// Or use our `notarize` helper extension function
-val 
 ```
 
 ## License
