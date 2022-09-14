@@ -29,10 +29,6 @@ dependencies {
     implementation("com.auth0:java-jwt:4.0.0")
 
     testImplementation(kotlin("test"))
-    val coroutineVersion = "1.6.4"
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineVersion")
-    testImplementation("io.ktor:ktor-client-cio:$ktorVersion")
-    testImplementation("ch.qos.logback:logback-classic:1.4.0")
 }
 
 tasks.test {
