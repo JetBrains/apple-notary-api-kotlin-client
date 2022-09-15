@@ -6,6 +6,7 @@ import io.github.archangelx360.models.NewSubmissionRequest
 import io.github.archangelx360.models.SubmissionResponse
 import io.ktor.client.plugins.*
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withTimeoutOrNull
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -38,7 +39,21 @@ data class StatusPollingConfiguration(
 )
 
 /**
- * Issue notarization submission for file and wait for submission to complete
+ * Issue notarization submission for specified file and wait for submission to complete
+ *
+ * @param filepath path to file to notarize
+ * @param pollingConfiguration configuration for status polling strategy
+ */
+fun NotaryClientV2.notarizeBlocking(
+    filepath: Path,
+    pollingConfiguration: StatusPollingConfiguration = StatusPollingConfiguration(),
+): NotarizationResult = runBlocking { notarize(filepath, pollingConfiguration) }
+
+/**
+ * Issue notarization submission for specified file and wait for submission to complete
+ *
+ * @param filepath path to file to notarize
+ * @param pollingConfiguration configuration for status polling strategy
  */
 suspend fun NotaryClientV2.notarize(
     filepath: Path,
@@ -115,7 +130,7 @@ private suspend fun NotaryClientV2.awaitSubmissionCompletion(
     }
 }
 
-fun sha256(path: Path): String {
+private fun sha256(path: Path): String {
     val md = MessageDigest.getInstance("SHA-256")
     DigestInputStream(path.inputStream().buffered(), md).use {
         val buffer = ByteArray(1024)
