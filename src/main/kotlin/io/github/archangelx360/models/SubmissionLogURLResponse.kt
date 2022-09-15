@@ -67,7 +67,6 @@ sealed class Logs {
     @Serializable
     @SerialName("1")
     class V1(
-        val logFormatVersion: Int,
         val jobId: String?,
         val status: SubmissionResponse.Status?,
         val statusSummary: String?,
