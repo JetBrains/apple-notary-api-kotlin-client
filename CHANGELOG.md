@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.2.5\-2.0.0](https://github.com/ArchangelX360/notary-api-kotlin-client/tree/0.2.5-2.0.0) (2022-09-15)
+[View commits](https://github.com/ArchangelX360/notary-api-kotlin-client/compare/0.2.4-2.0.0...0.2.5-2.0.0)
+
+**Closed issues:**
+
+- Compatibility issues with Kotlin `1.6.10` due to `aws.sdk.kotlin:s3` dependency [\#1](https://github.com/ArchangelX360/notary-api-kotlin-client/issues/1)
+
+## [0.2.4\-2.0.0](https://github.com/ArchangelX360/notary-api-kotlin-client/tree/0.2.4-2.0.0) (2022-09-14)
+[View commits](https://github.com/ArchangelX360/notary-api-kotlin-client/compare/0.2.3-2.0.0...0.2.4-2.0.0)
+
+
 ## [0.2.3\-2.0.0](https://github.com/ArchangelX360/notary-api-kotlin-client/tree/0.2.3-2.0.0) (2022-09-14)
 [View commits](https://github.com/ArchangelX360/notary-api-kotlin-client/compare/0.2.2-2.0.0...0.2.3-2.0.0)
 
