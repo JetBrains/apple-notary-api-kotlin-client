@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.2.6\-2.0.0](https://github.com/ArchangelX360/notary-api-kotlin-client/tree/0.2.6-2.0.0) (2022-09-15)
+[View commits](https://github.com/ArchangelX360/notary-api-kotlin-client/compare/0.2.5-2.0.0...0.2.6-2.0.0)
+
+**Closed issues:**
+
+- `java.lang.OutOfMemoryError: Java heap space` when trying to upload huge archive to S3 [\#2](https://github.com/ArchangelX360/notary-api-kotlin-client/issues/2)
+
 ## [0.2.5\-2.0.0](https://github.com/ArchangelX360/notary-api-kotlin-client/tree/0.2.5-2.0.0) (2022-09-15)
 [View commits](https://github.com/ArchangelX360/notary-api-kotlin-client/compare/0.2.4-2.0.0...0.2.5-2.0.0)
 
