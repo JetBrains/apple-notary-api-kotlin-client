@@ -74,11 +74,15 @@ class NotaryClientV2(
         // Thanks to the folks that built https://github.com/indygreg/PyOxidizer, we got it's us-west-2...
         s3Region: String = "us-west-2",
     ): PutObjectResult {
+        val inputStream = filepath.inputStream().buffered()
+        val metadata = ObjectMetadata().also {
+            it.contentLength = filepath.toFile().length()
+        }
         val request = PutObjectRequest(
             attributes.bucket,
             attributes.`object`,
-            filepath.inputStream(),
-            ObjectMetadata(),
+            inputStream,
+            metadata,
         )
         val credentials = BasicSessionCredentials(
             attributes.awsAccessKeyId,
