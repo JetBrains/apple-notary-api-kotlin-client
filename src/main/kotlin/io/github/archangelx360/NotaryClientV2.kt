@@ -74,7 +74,7 @@ class NotaryClientV2(
         // The region is not given anywhere in the Apple documentation.
         // Thanks to the folks that built https://github.com/indygreg/PyOxidizer, we got it's us-west-2...
         s3Region: String = "us-west-2",
-    ): PutObjectResult {
+    ): PutObjectResult? {
         val inputStream = filepath.inputStream().buffered()
         val metadata = ObjectMetadata().also {
             it.contentLength = filepath.fileSize()
