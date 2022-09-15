@@ -25,7 +25,8 @@ dependencies {
     api("io.ktor:ktor-client-content-negotiation:$ktorVersion")
     api("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
 
-    implementation("aws.sdk.kotlin:s3:0.17.5-beta")
+    implementation("com.amazonaws:aws-java-sdk-s3:1.12.302")
+
     implementation("com.auth0:java-jwt:4.0.0")
 
     testImplementation(kotlin("test"))

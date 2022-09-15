@@ -1,10 +1,11 @@
 package io.github.archangelx360
 
-import aws.sdk.kotlin.runtime.auth.credentials.StaticCredentialsProvider
-import aws.sdk.kotlin.services.s3.S3Client
-import aws.sdk.kotlin.services.s3.model.PutObjectRequest
-import aws.sdk.kotlin.services.s3.model.PutObjectResponse
-import aws.smithy.kotlin.runtime.content.asByteStream
+import com.amazonaws.auth.AWSStaticCredentialsProvider
+import com.amazonaws.auth.BasicSessionCredentials
+import com.amazonaws.services.s3.AmazonS3ClientBuilder
+import com.amazonaws.services.s3.model.ObjectMetadata
+import com.amazonaws.services.s3.model.PutObjectRequest
+import com.amazonaws.services.s3.model.PutObjectResult
 import io.github.archangelx360.auth.AppStoreConnectAPIKey
 import io.github.archangelx360.auth.withAppleAuthentication
 import io.github.archangelx360.models.*
@@ -17,6 +18,7 @@ import io.ktor.http.*
 import io.ktor.serialization.kotlinx.*
 import io.ktor.serialization.kotlinx.json.*
 import java.nio.file.Path
+import kotlin.io.path.inputStream
 
 class NotaryClientV2(
     private val credentials: AppStoreConnectAPIKey,
@@ -65,32 +67,30 @@ class NotaryClientV2(
      *
      * This is meant to be used after submitting a request using `submitSoftware`.
      */
-    suspend fun uploadSoftware(
+    fun uploadSoftware(
         attributes: NewSubmissionResponse.Data.Attributes,
         filepath: Path,
         // The region is not given anywhere in the Apple documentation.
         // Thanks to the folks that built https://github.com/indygreg/PyOxidizer, we got it's us-west-2...
         s3Region: String = "us-west-2",
-    ): PutObjectResponse {
-        val request = PutObjectRequest {
-            bucket = attributes.bucket
-            key = attributes.`object`
-            metadata = emptyMap()
-            body = filepath.asByteStream()
-        }
-
-        val credentials = StaticCredentialsProvider {
-            accessKeyId = attributes.awsAccessKeyId
-            secretAccessKey = attributes.awsSecretAccessKey
-            sessionToken = attributes.awsSessionToken
-        }
-
-        return S3Client {
-            region = s3Region
-            credentialsProvider = credentials
-        }.use { s3 ->
-            s3.putObject(request)
-        }
+    ): PutObjectResult {
+        val request = PutObjectRequest(
+            attributes.bucket,
+            attributes.`object`,
+            filepath.inputStream(),
+            ObjectMetadata(),
+        )
+        val credentials = BasicSessionCredentials(
+            attributes.awsAccessKeyId,
+            attributes.awsSecretAccessKey,
+            attributes.awsSessionToken,
+        )
+        val s3Client = AmazonS3ClientBuilder
+            .standard()
+            .withCredentials(AWSStaticCredentialsProvider(credentials))
+            .withRegion(s3Region)
+            .build()
+        return s3Client.putObject(request)
     }
 
     /**
