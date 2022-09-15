@@ -18,6 +18,7 @@ import io.ktor.http.*
 import io.ktor.serialization.kotlinx.*
 import io.ktor.serialization.kotlinx.json.*
 import java.nio.file.Path
+import kotlin.io.path.fileSize
 import kotlin.io.path.inputStream
 
 class NotaryClientV2(
@@ -76,7 +77,7 @@ class NotaryClientV2(
     ): PutObjectResult {
         val inputStream = filepath.inputStream().buffered()
         val metadata = ObjectMetadata().also {
-            it.contentLength = filepath.toFile().length()
+            it.contentLength = filepath.fileSize()
         }
         val request = PutObjectRequest(
             attributes.bucket,
