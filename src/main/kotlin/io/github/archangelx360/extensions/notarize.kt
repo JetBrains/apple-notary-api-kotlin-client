@@ -4,6 +4,7 @@ import io.github.archangelx360.NotaryClientV2
 import io.github.archangelx360.models.Logs
 import io.github.archangelx360.models.NewSubmissionRequest
 import io.github.archangelx360.models.SubmissionResponse
+import io.ktor.client.network.sockets.*
 import io.ktor.client.plugins.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
@@ -32,10 +33,21 @@ data class StatusPollingConfiguration(
     val timeout: Duration = 1.hours,
     val pollingPeriod: Duration = 30.seconds,
     /**
-     * Whether to ignore 5xx error from Notary API and keep polling status
+     * Whether to ignore 5xx error from Notary API and keep polling status instead of throwing
      */
     val ignoreServerError: Boolean = true,
-    val retryDelayAfterServerError: Duration = 5.minutes,
+    /**
+     * Whether to ignore timeout exception (HttpRequestTimeoutException, SocketTimeoutException,
+     * ConnectTimeoutException) and keep polling status instead of throwing
+     */
+    val ignoreTimeoutExceptions: Boolean = true,
+    /**
+     * Delay to wait after a failure has been ignored (timeout or server error).
+     *
+     * After a failure is ignored we will not respect the `pollingPeriod` duration but instead the
+     * `retryDelayAfterFailure` one, to avoid bursting the Notary API server while it is clearly having issues.
+     */
+    val retryDelayAfterFailure: Duration = 5.minutes,
 )
 
 /**
@@ -107,16 +119,18 @@ private suspend fun NotaryClientV2.awaitSubmissionCompletion(
     while (true) {
         val response = try {
             getSubmissionStatus(submissionId)
-        } catch (e: ServerResponseException) {
-            if (pollingConfiguration.ignoreServerError) {
-                logger.warn("Ignoring call failure to Notary API, will check status again in ${pollingConfiguration.retryDelayAfterServerError}:\n$e")
-                delay(pollingConfiguration.retryDelayAfterServerError)
-                continue
-            } else {
-                throw e
-            }
         } catch (e: Exception) {
-            throw e
+            when {
+                (pollingConfiguration.ignoreServerError && e is ServerResponseException) ->
+                    logger.warn("Ignoring call failure to Notary API, will check status again in ${pollingConfiguration.retryDelayAfterFailure}:\n$e")
+
+                (pollingConfiguration.ignoreTimeoutExceptions && isTimeoutException(e)) ->
+                    logger.warn("Ignoring call timeout to Notary API, will check status again in ${pollingConfiguration.retryDelayAfterFailure}:\n$e")
+
+                else -> throw e
+            }
+            delay(pollingConfiguration.retryDelayAfterFailure)
+            continue
         }
         when (val status = response.data?.attributes?.status) {
             SubmissionResponse.Status.ACCEPTED,
@@ -129,6 +143,10 @@ private suspend fun NotaryClientV2.awaitSubmissionCompletion(
         delay(pollingConfiguration.pollingPeriod)
     }
 }
+
+private fun isTimeoutException(e: Exception): Boolean = e is HttpRequestTimeoutException
+        || e is SocketTimeoutException
+        || e is ConnectTimeoutException
 
 private fun sha256(path: Path): String {
     val md = MessageDigest.getInstance("SHA-256")
