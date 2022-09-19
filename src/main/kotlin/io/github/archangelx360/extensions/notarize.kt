@@ -124,7 +124,7 @@ private suspend fun NotaryClientV2.awaitSubmissionCompletion(
                 (pollingConfiguration.ignoreServerError && e is ServerResponseException) ->
                     logger.warn("Ignoring call failure to Notary API, will check status again in ${pollingConfiguration.retryDelayAfterFailure}:\n$e")
 
-                (pollingConfiguration.ignoreTimeoutExceptions && isTimeoutException(e)) ->
+                (pollingConfiguration.ignoreTimeoutExceptions && e.isTimeoutException()) ->
                     logger.warn("Ignoring call timeout to Notary API, will check status again in ${pollingConfiguration.retryDelayAfterFailure}:\n$e")
 
                 else -> throw e
@@ -144,9 +144,9 @@ private suspend fun NotaryClientV2.awaitSubmissionCompletion(
     }
 }
 
-private fun isTimeoutException(e: Exception): Boolean = e is HttpRequestTimeoutException
-        || e is SocketTimeoutException
-        || e is ConnectTimeoutException
+private fun Exception.isTimeoutException(): Boolean = this is HttpRequestTimeoutException
+        || this is SocketTimeoutException
+        || this is ConnectTimeoutException
 
 private fun sha256(path: Path): String {
     val md = MessageDigest.getInstance("SHA-256")
