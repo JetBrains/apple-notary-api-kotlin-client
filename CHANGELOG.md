@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.2.9\-2.0.0](https://github.com/ArchangelX360/notary-api-kotlin-client/tree/0.2.9-2.0.0) (2022-09-19)
+[View commits](https://github.com/ArchangelX360/notary-api-kotlin-client/compare/0.2.8-2.0.0...0.2.9-2.0.0)
+
+**Closed issues:**
+
+- Allow timeout exception ignoring at status polling [\#5](https://github.com/ArchangelX360/notary-api-kotlin-client/issues/5)
+
 ## [0.2.8\-2.0.0](https://github.com/ArchangelX360/notary-api-kotlin-client/tree/0.2.8-2.0.0) (2022-09-15)
 [View commits](https://github.com/ArchangelX360/notary-api-kotlin-client/compare/0.2.7-2.0.0...0.2.8-2.0.0)
 
