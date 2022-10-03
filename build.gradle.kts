@@ -80,8 +80,8 @@ publishing {
                 url.set(githubRepoUrl)
                 licenses {
                     license {
-                        name.set("The MIT License")
-                        url.set("https://opensource.org/licenses/MIT")
+                        name.set("Apache 2.0 License")
+                        url.set("https://opensource.org/licenses/Apache-2.0")
                     }
                 }
                 developers {
