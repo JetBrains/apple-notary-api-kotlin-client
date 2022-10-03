@@ -1,4 +1,4 @@
-package io.github.archangelx360.models
+package com.jetbrains.notary.models
 
 import kotlinx.serialization.Serializable
 

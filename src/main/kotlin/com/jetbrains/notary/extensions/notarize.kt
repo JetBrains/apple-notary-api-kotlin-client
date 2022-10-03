@@ -1,9 +1,9 @@
-package io.github.archangelx360.extensions
+package com.jetbrains.notary.extensions
 
-import io.github.archangelx360.NotaryClientV2
-import io.github.archangelx360.models.Logs
-import io.github.archangelx360.models.NewSubmissionRequest
-import io.github.archangelx360.models.SubmissionResponse
+import com.jetbrains.notary.NotaryClientV2
+import com.jetbrains.notary.models.Logs
+import com.jetbrains.notary.models.NewSubmissionRequest
+import com.jetbrains.notary.models.SubmissionResponse
 import io.ktor.client.network.sockets.*
 import io.ktor.client.plugins.*
 import kotlinx.coroutines.delay

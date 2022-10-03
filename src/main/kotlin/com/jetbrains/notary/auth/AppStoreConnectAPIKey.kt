@@ -1,4 +1,4 @@
-package io.github.archangelx360.auth
+package com.jetbrains.notary.auth
 
 import com.auth0.jwt.JWT
 import com.auth0.jwt.algorithms.Algorithm

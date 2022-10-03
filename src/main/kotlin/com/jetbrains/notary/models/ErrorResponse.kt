@@ -1,4 +1,4 @@
-package io.github.archangelx360.models
+package com.jetbrains.notary.models
 
 /**
  * The notary service’s response when an error occurs.

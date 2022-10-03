@@ -1,43 +1,48 @@
-package io.github.archangelx360.models
+package com.jetbrains.notary.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 /**
- * The notary service’s response to a request for information about your team’s previous submissions.
+ * The notary service’s response to a request for the status of a submission.
  *
- * https://developer.apple.com/documentation/notaryapi/submissionlistresponse
+ * https://developer.apple.com/documentation/notaryapi/submissionresponse
  */
 @Serializable
-data class SubmissionListResponse(
-    val data: List<Data>?,
+data class SubmissionResponse(
+    /**
+     * Data that describes the status of the submission request.
+     */
+    val data: Data?,
+    /**
+     * An empty object that you can ignore.
+     */
     val meta: Meta?,
 ) {
     /**
-     * Data that describes one of your team’s previous submissions.
+     * Information that the service provides about the status of a notarization submission.
      *
-     * https://developer.apple.com/documentation/notaryapi/submissionlistresponse/data
+     * https://developer.apple.com/documentation/notaryapi/submissionresponse/data
      */
     @Serializable
     data class Data(
         /**
-         * Information about a particular submission.
-         */
-        val attributes: Attributes?,
-        /**
-         * The unique identifier for a submission.
-         * This value matches the value that you received in the id field that appeared in the response to the Submit Software call that you used to start the submission.
+         * The unique identifier for this submission. This value matches the value that you provided as a path parameter to the Get Submission Status call that elicited this response.
          */
         val id: String?,
         /**
          * The resource type.
          */
         val type: String?,
+        /**
+         * Information about the status of a submission.
+         */
+        val attributes: Attributes?,
     ) {
         /**
          * Information about the status of a submission.
          *
-         * https://developer.apple.com/documentation/notaryapi/submissionlistresponse/data/attributes
+         * https://developer.apple.com/documentation/notaryapi/submissionresponse/data/attributes
          */
         @Serializable
         data class Attributes(
@@ -71,6 +76,11 @@ data class SubmissionListResponse(
         REJECTED,
     }
 
+    /**
+     * An empty object.
+     *
+     * https://developer.apple.com/documentation/notaryapi/submissionresponse/meta
+     */
     @Serializable
     class Meta
 }

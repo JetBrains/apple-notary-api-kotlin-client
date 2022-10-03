@@ -1,4 +1,4 @@
-package io.github.archangelx360
+package com.jetbrains.notary
 
 import com.amazonaws.auth.AWSStaticCredentialsProvider
 import com.amazonaws.auth.BasicSessionCredentials
@@ -6,9 +6,9 @@ import com.amazonaws.services.s3.AmazonS3ClientBuilder
 import com.amazonaws.services.s3.model.ObjectMetadata
 import com.amazonaws.services.s3.model.PutObjectRequest
 import com.amazonaws.services.s3.model.PutObjectResult
-import io.github.archangelx360.auth.AppStoreConnectAPIKey
-import io.github.archangelx360.auth.withAppleAuthentication
-import io.github.archangelx360.models.*
+import com.jetbrains.notary.auth.AppStoreConnectAPIKey
+import com.jetbrains.notary.auth.withAppleAuthentication
+import com.jetbrains.notary.models.*
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.plugins.*
@@ -135,7 +135,7 @@ class NotaryClientV2(
         // ```
         // io.ktor.client.call.NoTransformationFoundException: No transformation found:
         // class io.ktor.utils.io.ByteBufferChannel (Kotlin reflection is not available)
-        // -> class io.github.archangelx360.models.Logs (Kotlin reflection is not available)
+        // -> class com.jetbrains.notary.models.Logs (Kotlin reflection is not available)
         // ```
         // Probably due to an invalid response Content-Type.
         val logs = logReponse.bodyAsText()
