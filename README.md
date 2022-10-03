@@ -1,6 +1,5 @@
 # apple-notary-api-kotlin-client
 
-[![Maven central version](https://img.shields.io/maven-central/v/io.github.archangelx360/notary-api-kotlin-client.svg)](http://mvnrepository.com/artifact/io.github.archangelx360/notary-api-kotlin-client)
 [![Github Build](https://github.com/JetBrains/apple-notary-api-kotlin-client/actions/workflows/build.yml/badge.svg)](https://github.com/JetBrains/apple-notary-api-kotlin-client/actions/workflows/build.yml)
 [![GitHub license](https://img.shields.io/badge/license-APACHE_2.0-blue.svg)](https://github.com/JetBrains/apple-notary-api-kotlin-client/blob/main/LICENSE)
 
@@ -8,23 +7,22 @@ Apple Notary API client for Kotlin
 
 ## Add the dependency
 
-This library is available on Maven Central.
-
-Using Gradle:
+This library is available on Space Packages, you will need to add this Maven repository to your Gradle configuration:
 
 ```kotlin
-implementation("io.github.archangelx360:notary-api-kotlin-client:$version")
+import java.net.URI
+
+repositories {
+    maven {
+        url = URI("https://packages.jetbrains.team/maven/p/ij/intellij-dependencies")
+    }
+}
 ```
 
-Using Maven:
+Then add the dependency
 
-```xml
-
-<dependency>
-    <groupId>io.github.archangelx360</groupId>
-    <artifactId>notary-api-kotlin-client</artifactId>
-    <version>$VERSION</version>
-</dependency>
+```kotlin
+implementation("org.jetbrains:apple-notary-api-kotlin-client:$version")
 ```
 
 You will also need to provide a Ktor engine implementation, for example if you want to use the CIO engine:
@@ -47,8 +45,8 @@ While doing this process make sure to save:
 Once you have these information, you can setup a credential object:
 
 ```kotlin
-import io.github.archangelx360.NotaryClientV2
-import io.github.archangelx360.auth.AppStoreConnectAPIKey
+import com.jetbrains.notary.NotaryClientV2
+import com.jetbrains.notary.auth.AppStoreConnectAPIKey
 
 val credentials = AppStoreConnectAPIKey(
     issuerId = "your-issuer-id",
