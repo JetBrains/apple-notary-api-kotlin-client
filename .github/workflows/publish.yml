@@ -18,17 +18,14 @@ jobs:
           distribution: 'zulu'
           java-version: 17
 
-      # The publishToSonatype task and the repository release need to be in the same Gradle call
-      # so that the closeAndRelease task knows which staging repository was created by publishToSonatype
-      - name: Build and publish to OSS Sonatype and then Maven Central
+      - name: Build and publish to Space Packages
         uses: burrunan/gradle-cache-action@v1
         env:
           # GPG keys for signing plugin (sign maven artifacts)
           # see https://docs.gradle.org/current/userguide/signing_plugin.html#sec:in-memory-keys
           # ORG_GRADLE_PROJECT_signingKey: ${{ secrets.GPG_SECRET_ASCII_ARMORED }}
           # ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.GPG_PASSWORD }}
-          # Credentials implicitly read by the gradle-nexus-publish-plugin
-          # https://github.com/gradle-nexus/publish-plugin#publishing-to-maven-central-via-sonatype-ossrh
+
           ORG_GRADLE_PROJECT_spaceUsername: ${{ secrets.JB_SPACE_CLIENT_ID }}
           ORG_GRADLE_PROJECT_spacePassword: ${{ secrets.JB_SPACE_CLIENT_SECRET }}
         with:
