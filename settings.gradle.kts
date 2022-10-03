@@ -1,4 +1,4 @@
-rootProject.name = "notary-api-kotlin-client"
+rootProject.name = "apple-notary-api-kotlin-client"
 
 gradle.beforeProject {
     val localPropertiesFile = rootDir.resolve("local.properties")

@@ -1,17 +1,14 @@
-import java.net.URI
-
 plugins {
     val kotlinVersion = "1.7.10"
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.serialization") version kotlinVersion
     id("org.jetbrains.dokka") version "1.7.10"
-    id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
     id("maven-publish")
     id("signing")
     id("org.hildan.github.changelog") version "1.11.1"
 }
 
-group = "io.github.archangelx360"
+group = "org.jetbrains"
 description = "Apple Notary API client for Kotlin"
 
 repositories {
@@ -52,17 +49,20 @@ val dokkaJavadocJar by tasks.creating(Jar::class) {
     from(tasks.dokkaJavadoc)
 }
 
-nexusPublishing {
-    packageGroup.set("io.github.archangelx360")
-    repositories {
-        sonatype {
-            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
-            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
-        }
-    }
-}
+val spaceUsername: String? by project
+val spacePassword: String? by project
 
 publishing {
+    repositories {
+        maven {
+            url = uri("https://packages.jetbrains.team/maven/p/ij/intellij-dependencies")
+            credentials {
+                username = spaceUsername
+                password = spacePassword
+            }
+        }
+    }
+
     publications {
         create<MavenPublication>("maven") {
             from(components["java"])
@@ -101,9 +101,9 @@ publishing {
     }
 }
 
-signing {
-    val signingKey: String? by project
-    val signingPassword: String? by project
-    useInMemoryPgpKeys(signingKey, signingPassword)
-    sign(publishing.publications["maven"])
-}
+// signing {
+//     val signingKey: String? by project
+//     val signingPassword: String? by project
+//     useInMemoryPgpKeys(signingKey, signingPassword)
+//     sign(publishing.publications["maven"])
+// }
