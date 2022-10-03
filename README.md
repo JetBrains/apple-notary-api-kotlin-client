@@ -1,8 +1,8 @@
-# notary-api-kotlin-client
+# apple-notary-api-kotlin-client
 
 [![Maven central version](https://img.shields.io/maven-central/v/io.github.archangelx360/notary-api-kotlin-client.svg)](http://mvnrepository.com/artifact/io.github.archangelx360/notary-api-kotlin-client)
-[![Github Build](https://github.com/ArchangelX360/notary-api-kotlin-client/actions/workflows/build.yml/badge.svg)](https://github.com/ArchangelX360/notary-api-kotlin-client/actions/workflows/build.yml)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ArchangelX360/notary-api-kotlin-client/blob/main/LICENSE)
+[![Github Build](https://github.com/JetBrains/apple-notary-api-kotlin-client/actions/workflows/build.yml/badge.svg)](https://github.com/JetBrains/apple-notary-api-kotlin-client/actions/workflows/build.yml)
+[![GitHub license](https://img.shields.io/badge/license-APACHE_2.0-blue.svg)](https://github.com/JetBrains/apple-notary-api-kotlin-client/blob/main/LICENSE)
 
 Apple Notary API client for Kotlin
 
@@ -67,4 +67,4 @@ println(submissions)
 
 ## License
 
-This project is distributed under the MIT license.
+This project is distributed under the Apache 2.0 license.
