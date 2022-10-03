@@ -4,7 +4,9 @@
 [![Github Build](https://github.com/JetBrains/apple-notary-api-kotlin-client/actions/workflows/build.yml/badge.svg)](https://github.com/JetBrains/apple-notary-api-kotlin-client/actions/workflows/build.yml)
 [![GitHub license](https://img.shields.io/badge/license-APACHE_2.0-blue.svg)](https://github.com/JetBrains/apple-notary-api-kotlin-client/blob/main/LICENSE)
 
-Apple Notary API client for Kotlin
+[Apple Notary API](https://developer.apple.com/documentation/notaryapi) client for [Kotlin](https://kotlinlang.org).
+
+Notarize your macOS application from Kotlin code without dependency on [Xcode](https://developer.apple.com/xcode) nor [macOS](https://www.apple.com/macos).
 
 ## Add the dependency
 
@@ -64,6 +66,60 @@ val submissions = client.getPreviousSubmissions()
 println(submissions)
 ```
 
+### Extensions
+
+`apple-notary-api-kotlin-client` provides some extension functions that cover basic use cases of 
+[Apple Notary API](https://developer.apple.com/documentation/notaryapi).
+
+#### Functions `notarize` or `notarizeBlocking`
+
+`notarize` (or its blocking equivalent `notarizeBlocking`) will cover the basic use case of "I want to notarize a file,
+wait for the notarization to complete, get status and logs of the submission result when completed".
+Under the hood, it will do the following:
+- Issue a notarization submission for the specified file
+- Upload the specified file to the location asked by [Apple Notary API](https://developer.apple.com/documentation/notaryapi)
+- Poll [Apple Notary API](https://developer.apple.com/documentation/notaryapi) until the submission completes (or timeout)
+  - _Note: with configuration such as `ignoreServerError` and `ignoreTimeoutExceptions` set to `true`, polling will be hardened not to fail on usual false negative situations_
+- Fetch logs of the completed submission (whether it is a success or a failure)
+- Return status and logs of the completed submission
+
+##### Example usage snippet
+
+```kotlin
+import com.jetbrains.notary.NotaryClientV2
+import com.jetbrains.notary.auth.AppStoreConnectAPIKey
+import kotlin.time.Duration.Companion.minutes
+
+val credentials = AppStoreConnectAPIKey(
+    issuerId = "your-issuer-id",
+    keyId = "your-private-key-id",
+    privateKey = "your-private-key-file-content",
+)
+
+val notaryApiClient = NotaryClientV2(credentials)
+val notarizationResult = notaryApiClient.notarizeBlocking(file, StatusPollingConfiguration(
+    timeout = 30.minutes,
+    pollingPeriod = 1.minutes,
+    ignoreServerError = true,
+    ignoreTimeoutExceptions = true,
+    retryDelayAfterFailure = 10.minutes,
+))
+
+val json = Json { prettyPrint = true }
+println("Notarization logs:\n${json.encodeToString(notarizationResult.logs)}")
+
+when (notarizationResult.status) {
+    SubmissionResponse.Status.ACCEPTED -> println("Notarization of $file successful")
+    SubmissionResponse.Status.IN_PROGRESS, null -> error("Timed out polling status of $file notarization submission")
+    SubmissionResponse.Status.INVALID, SubmissionResponse.Status.REJECTED -> error("Notarization of $file failed, see logs above")
+}
+```
+
 ## License
 
 This project is distributed under the Apache 2.0 license.
+
+## Acknowledgment
+
+Special thanks to the people that built Rust library
+[apple-codesign](https://github.com/indygreg/apple-platform-rs/tree/main/apple-codesign) that inspired this work.
