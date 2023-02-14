@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory
 import java.nio.file.Path
 import java.security.DigestInputStream
 import java.security.MessageDigest
+import kotlin.io.path.extension
 import kotlin.io.path.inputStream
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.hours
@@ -64,13 +65,16 @@ fun NotaryClientV2.notarizeBlocking(
 /**
  * Issue notarization submission for specified file and wait for submission to complete
  *
- * @param filepath path to file to notarize
+ * @param filepath path to file to notarize, only .zip and .dmg are supported
  * @param pollingConfiguration configuration for status polling strategy
  */
 suspend fun NotaryClientV2.notarize(
     filepath: Path,
     pollingConfiguration: StatusPollingConfiguration = StatusPollingConfiguration(),
 ): NotarizationResult {
+    require(filepath.extension == "zip" || filepath.extension == "dmg") {
+        "$filepath: only .zip and .dmg files can be notarized"
+    }
     val request = NewSubmissionRequest(
         sha256 = sha256(filepath),
         submissionName = filepath.fileName.toString(),
