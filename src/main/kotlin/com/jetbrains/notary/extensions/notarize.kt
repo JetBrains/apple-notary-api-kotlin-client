@@ -8,6 +8,7 @@ import io.ktor.client.network.sockets.*
 import io.ktor.client.plugins.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.yield
 import kotlinx.coroutines.withTimeoutOrNull
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -152,7 +153,7 @@ private fun Exception.isTimeoutException(): Boolean = this is HttpRequestTimeout
         || this is SocketTimeoutException
         || this is ConnectTimeoutException
 
-private fun sha256(path: Path): String {
+private suspend fun sha256(path: Path): String {
     val md = MessageDigest.getInstance("SHA-256")
     DigestInputStream(path.inputStream().buffered(), md).use {
         val buffer = ByteArray(1024)
@@ -161,6 +162,7 @@ private fun sha256(path: Path): String {
             if (readCount < 0) {
                 break
             }
+            yield()
         }
     }
     return md.digest().fold("") { str, it -> str + "%02x".format(it) }
