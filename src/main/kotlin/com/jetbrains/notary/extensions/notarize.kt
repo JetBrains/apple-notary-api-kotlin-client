@@ -6,10 +6,7 @@ import com.jetbrains.notary.models.NewSubmissionRequest
 import com.jetbrains.notary.models.SubmissionResponse
 import io.ktor.client.network.sockets.*
 import io.ktor.client.plugins.*
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.yield
-import kotlinx.coroutines.withTimeoutOrNull
+import kotlinx.coroutines.*
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import org.slf4j.LoggerFactory
@@ -49,6 +46,7 @@ data class StatusPollingConfiguration(
      * After a failure is ignored we will not respect the `pollingPeriod` duration but instead the
      * `retryDelayAfterFailure` one, to avoid bursting the Notary API server while it is clearly having issues.
      */
+    @Deprecated(message = "This configuration property is now ignored and should be removed, you could customize a delay in your [HttpRequestRetry.Configuration] of your [NotaryClientV2.httpClient] instead")
     val retryDelayAfterFailure: Duration = 5.minutes,
 )
 
@@ -122,28 +120,26 @@ private suspend fun NotaryClientV2.awaitSubmissionCompletion(
     pollingConfiguration: StatusPollingConfiguration,
 ): SubmissionResponse.Status {
     while (true) {
-        val response = try {
-            getSubmissionStatus(submissionId)
+        try {
+            val response = getSubmissionStatus(submissionId)
+            when (val status = response.data?.attributes?.status) {
+                SubmissionResponse.Status.ACCEPTED,
+                SubmissionResponse.Status.INVALID,
+                SubmissionResponse.Status.REJECTED -> return status
+
+                SubmissionResponse.Status.IN_PROGRESS -> logger.info("Notarization still in progress, will check status again in ${pollingConfiguration.pollingPeriod}")
+                null -> logger.warn("Notarization status unknown, will check status again in ${pollingConfiguration.pollingPeriod}")
+            }
         } catch (e: Exception) {
             when {
                 (pollingConfiguration.ignoreServerError && e is ServerResponseException) ->
-                    logger.warn("Ignoring call failure to Notary API, will check status again in ${pollingConfiguration.retryDelayAfterFailure}:\n$e")
+                    logger.warn("Ignoring call failure to Notary API, will check status again in ${pollingConfiguration.pollingPeriod}:\n$e")
 
                 (pollingConfiguration.ignoreTimeoutExceptions && e.isTimeoutException()) ->
-                    logger.warn("Ignoring call timeout to Notary API, will check status again in ${pollingConfiguration.retryDelayAfterFailure}:\n$e")
+                    logger.warn("Ignoring call timeout to Notary API, will check status again in ${pollingConfiguration.pollingPeriod}:\n$e")
 
                 else -> throw e
             }
-            delay(pollingConfiguration.retryDelayAfterFailure)
-            continue
-        }
-        when (val status = response.data?.attributes?.status) {
-            SubmissionResponse.Status.ACCEPTED,
-            SubmissionResponse.Status.INVALID,
-            SubmissionResponse.Status.REJECTED -> return status
-
-            SubmissionResponse.Status.IN_PROGRESS -> logger.info("Notarization still in progress, will check status again in ${pollingConfiguration.pollingPeriod}")
-            null -> logger.warn("Notarization status unknown, will check status again in ${pollingConfiguration.pollingPeriod}")
         }
         delay(pollingConfiguration.pollingPeriod)
     }

@@ -79,7 +79,7 @@ Under the hood, it will do the following:
 - Issue a notarization submission for the specified file
 - Upload the specified file to the location asked by [Apple Notary API](https://developer.apple.com/documentation/notaryapi)
 - Poll [Apple Notary API](https://developer.apple.com/documentation/notaryapi) until the submission completes (or timeout)
-  - _Note: with configuration such as `ignoreServerError` and `ignoreTimeoutExceptions` set to `true`, polling will be hardened not to fail on usual false negative situations_
+  - _Note: with configuration such as `ignoreServerError` and `ignoreTimeoutExceptions` set to `true` (set by default), polling will be hardened not to fail on usual false negative situations_
 - Fetch logs of the completed submission (whether it is a success or a failure)
 - Return status and logs of the completed submission
 
@@ -102,7 +102,6 @@ val notarizationResult = notaryApiClient.notarizeBlocking(file, StatusPollingCon
     pollingPeriod = 1.minutes,
     ignoreServerError = true,
     ignoreTimeoutExceptions = true,
-    retryDelayAfterFailure = 10.minutes,
 ))
 
 val json = Json { prettyPrint = true }
@@ -113,6 +112,36 @@ when (notarizationResult.status) {
     SubmissionResponse.Status.IN_PROGRESS, null -> error("Timed out polling status of $file notarization submission")
     SubmissionResponse.Status.INVALID, SubmissionResponse.Status.REJECTED -> error("Notarization of $file failed, see logs above")
 }
+```
+
+### Configuration
+
+#### Use your own `ktor` client implementation
+
+You are free to use your own `ktor` client implementation and thus configuration.
+We provide `NotaryClientV2.defaultHttpClient` to allow your client configuration to extend the default one.
+
+##### Example of configuration: change retry policy
+
+```kotlin
+import com.jetbrains.notary.NotaryClientV2
+import com.jetbrains.notary.auth.AppStoreConnectAPIKey
+import kotlin.time.Duration.Companion.minutes
+
+val credentials = AppStoreConnectAPIKey(
+  issuerId = "your-issuer-id",
+  keyId = "your-private-key-id",
+  privateKey = "your-private-key-file-content",
+)
+
+val myOwnClient = NotaryClientV2.defaultHttpClient.config { // keep all the default configuration
+  install(HttpRequestRetry) {
+    retryOnExceptionOrServerErrors(maxRetries = 10) // but increase the number of retry of the default configuration
+    constantDelay(millis = 1.minutes.inWholeMilliseconds) // but change the default exponential retry by a constant one
+  }
+}
+
+val notaryApiClient = NotaryClientV2(credentials, httpClient = myOwnClient)
 ```
 
 ## License

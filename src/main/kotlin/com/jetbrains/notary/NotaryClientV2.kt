@@ -23,18 +23,30 @@ import kotlinx.serialization.json.Json
 import java.nio.file.Path
 import kotlin.io.path.fileSize
 import kotlin.io.path.inputStream
+import kotlin.time.Duration.Companion.minutes
 
 class NotaryClientV2(
     private val credentials: AppStoreConnectAPIKey,
     private val baseUrl: String = "https://appstoreconnect.apple.com",
-    private val httpClient: HttpClient = HttpClient {
-        install(ContentNegotiation) {
-            json()
-            // Apple does not respect Accept header, so we work around to make Ktor still deserialize `application/octet-stream` as JSON
-            serialization(ContentType.Application.OctetStream, DefaultJson)
-        }
-    },
+    private val httpClient: HttpClient = defaultHttpClient,
 ) {
+    companion object {
+        val defaultHttpClient = HttpClient {
+            install(ContentNegotiation) {
+                json()
+                // Apple does not respect Accept header, so we work around to make Ktor still deserialize `application/octet-stream` as JSON
+                serialization(ContentType.Application.OctetStream, DefaultJson)
+            }
+            install(HttpRequestRetry) {
+                retryOnExceptionOrServerErrors(maxRetries = 4)
+                exponentialDelay(
+                    base = 5.0, // 5s, 25s, 125s, etc.
+                    maxDelayMs = 10.minutes.inWholeMilliseconds,
+                )
+            }
+        }
+    }
+
     /**
      * Start the process of uploading a new version of your software to the notary service.
      *
