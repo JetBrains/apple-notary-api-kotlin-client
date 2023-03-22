@@ -1,8 +1,8 @@
 plugins {
-    val kotlinVersion = "1.7.10"
+    val kotlinVersion = "1.8.10"
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.serialization") version kotlinVersion
-    id("org.jetbrains.dokka") version "1.7.10"
+    id("org.jetbrains.dokka") version kotlinVersion
     id("maven-publish")
     id("signing")
     id("org.hildan.github.changelog") version "1.11.1"
