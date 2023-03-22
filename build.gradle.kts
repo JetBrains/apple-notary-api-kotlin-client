@@ -22,7 +22,7 @@ dependencies {
     api("io.ktor:ktor-client-content-negotiation:$ktorVersion")
     api("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
 
-    implementation("com.amazonaws:aws-java-sdk-s3:1.12.302")
+    implementation("com.amazonaws:aws-java-sdk-s3:1.12.431")
 
     implementation("com.auth0:java-jwt:4.0.0")
 
