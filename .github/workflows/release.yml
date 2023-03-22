@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: "New semver version without Notary API version suffix"
+        description: "New semver version"
         required: true
 
 jobs:
@@ -27,17 +27,6 @@ jobs:
           job-id: jdk17
           arguments: build
 
-      - name: Read Notary API version
-        uses: pCYSl5EDgo/cat@master
-        id: notary-api-version
-        with:
-          path: notary-api-version.txt
-          trim: true
-
-      - name: Compute release tag (with protocol version)
-        run: echo "::set-output name=tag::${{ github.event.inputs.version }}-${{ steps.notary-api-version.outputs.text }}"
-        id: compute-tag
-
       - name: Generate Change Log
         uses: burrunan/gradle-cache-action@v1
         env:
@@ -48,7 +37,7 @@ jobs:
           # We already deal with caches in a previous gradle-cache-action
           execution-only-caches: true
           arguments: generateChangelog
-          properties: version=${{ steps.compute-tag.outputs.tag }}
+          properties: version=${{ github.event.inputs.version }}
 
       - name: Commit and Push Change Log
         id: changelog-commit
@@ -56,7 +45,7 @@ jobs:
           git config user.name '${{ github.actor }}'
           git config user.email '${{ github.actor }}@users.noreply.github.com'
           git add CHANGELOG.md
-          git commit -m "Version ${{ steps.compute-tag.outputs.tag }}"
+          git commit -m "Version ${{ github.event.inputs.version }}"
           git push
           echo "::set-output name=sha::$(git rev-parse HEAD)"
       - name: Create Release and Tag
@@ -64,6 +53,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }} # using personal token to trigger publish workflow
         with:
-          tag_name: ${{ steps.compute-tag.outputs.tag }}
-          release_name: ${{ steps.compute-tag.outputs.tag }}
+          tag_name: ${{ github.event.inputs.version }}
+          release_name: ${{ github.event.inputs.version }}
           commitish: ${{ steps.changelog-commit.outputs.sha }}
