@@ -1,5 +1,20 @@
 # Change Log
 
+## [1.0.2](https://github.com/JetBrains/apple-notary-api-kotlin-client/tree/1.0.2) (2023-03-22)
+[View commits](https://github.com/JetBrains/apple-notary-api-kotlin-client/compare/1.0.1-2.0.0...1.0.2)
+
+**Closed issues:**
+
+- Make default HttpClient retry exceptions and server errors [\#7](https://github.com/JetBrains/apple-notary-api-kotlin-client/issues/7)
+
+## [1.0.1\-2.0.0](https://github.com/JetBrains/apple-notary-api-kotlin-client/tree/1.0.1-2.0.0) (2023-02-14)
+[View commits](https://github.com/JetBrains/apple-notary-api-kotlin-client/compare/1.0.0-2.0.0...1.0.1-2.0.0)
+
+**Merged pull requests:**
+
+- Cancelable sha256 computation [\#6](https://github.com/JetBrains/apple-notary-api-kotlin-client/pull/6) ([@DmPanov](https://github.com/DmPanov))
+- Only .zip and .dmg files can be notarized [\#5](https://github.com/JetBrains/apple-notary-api-kotlin-client/pull/5) ([@DmPanov](https://github.com/DmPanov))
+
 ## [1.0.0\-2.0.0](https://github.com/JetBrains/apple-notary-api-kotlin-client/tree/1.0.0-2.0.0) (2022-10-03)
 [View commits](https://github.com/JetBrains/apple-notary-api-kotlin-client/compare/0.2.11-2.0.0...1.0.0-2.0.0)
 
