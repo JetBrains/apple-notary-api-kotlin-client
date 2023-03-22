@@ -5,7 +5,7 @@ plugins {
     id("org.jetbrains.dokka") version kotlinVersion
     id("maven-publish")
     id("signing")
-    id("org.hildan.github.changelog") version "1.11.1"
+    id("org.hildan.github.changelog") version "1.13.1"
 }
 
 group = "org.jetbrains"
