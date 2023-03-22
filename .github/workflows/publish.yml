@@ -19,7 +19,7 @@ jobs:
           java-version: 17
 
       - name: Build and publish to Space Packages
-        uses: burrunan/gradle-cache-action@v1
+        uses: gradle/gradle-build-action@v2
         env:
           # GPG keys for signing plugin (sign maven artifacts)
           # see https://docs.gradle.org/current/userguide/signing_plugin.html#sec:in-memory-keys
@@ -29,7 +29,4 @@ jobs:
           ORG_GRADLE_PROJECT_spaceUsername: ${{ secrets.JB_SPACE_CLIENT_ID }}
           ORG_GRADLE_PROJECT_spacePassword: ${{ secrets.JB_SPACE_CLIENT_SECRET }}
         with:
-          # jobs with different JDK versions can't share caches
-          job-id: jdk17
-          arguments: publish
-          properties: version=${{ github.event.release.tag_name }}
+          arguments: publish -Pversion=${{ github.event.release.tag_name }}
