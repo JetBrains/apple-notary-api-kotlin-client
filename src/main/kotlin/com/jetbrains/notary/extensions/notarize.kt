@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory
 import java.nio.file.Path
 import java.security.DigestInputStream
 import java.security.MessageDigest
+import kotlin.coroutines.coroutineContext
 import kotlin.io.path.extension
 import kotlin.io.path.inputStream
 import kotlin.time.Duration
@@ -131,6 +132,7 @@ private suspend fun NotaryClientV2.awaitSubmissionCompletion(
                 null -> logger.warn("Notarization status unknown, will check status again in ${pollingConfiguration.pollingPeriod}")
             }
         } catch (e: Exception) {
+            coroutineContext.ensureActive()
             when {
                 (pollingConfiguration.ignoreServerError && e is ServerResponseException) ->
                     logger.warn("Ignoring call failure to Notary API, will check status again in ${pollingConfiguration.pollingPeriod}:\n$e")
