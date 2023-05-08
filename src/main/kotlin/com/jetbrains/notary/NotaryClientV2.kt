@@ -18,12 +18,18 @@ import io.ktor.client.statement.*
 import io.ktor.http.*
 import io.ktor.serialization.kotlinx.*
 import io.ktor.serialization.kotlinx.json.*
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import java.nio.file.Path
 import kotlin.io.path.fileSize
 import kotlin.io.path.inputStream
 import kotlin.time.Duration.Companion.minutes
+
+@OptIn(ExperimentalSerializationApi::class)
+internal val notaryClientJson = Json {
+    explicitNulls = false
+}
 
 class NotaryClientV2(
     private val credentials: AppStoreConnectAPIKey,
@@ -33,7 +39,7 @@ class NotaryClientV2(
     companion object {
         val defaultHttpClient = HttpClient {
             install(ContentNegotiation) {
-                json()
+                json(notaryClientJson)
                 // Apple does not respect Accept header, so we work around to make Ktor still deserialize `application/octet-stream` as JSON
                 serialization(ContentType.Application.OctetStream, DefaultJson)
             }

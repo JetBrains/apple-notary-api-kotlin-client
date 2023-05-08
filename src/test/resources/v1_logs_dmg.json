@@ -1,0 +1,282 @@
+{
+  "logFormatVersion": 1,
+  "jobId": "e893d15f-5a02-4f65-803a-702c557dcee9",
+  "status": "Accepted",
+  "statusSummary": "Ready for distribution",
+  "statusCode": 0,
+  "archiveFilename": "jetbrains-toolbox-2.0.0.15286-arm64.dmg",
+  "uploadDate": "2023-05-08T11:58:14.988Z",
+  "sha256": "b74c01b1c3e9968813041cdff2fc05529a9849c8d0a411341bfa7e17cd8b8f20",
+  "ticketContents": [
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "a937bb597511a4e3365e99a74ce82345c2a436dc"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "a1629607c0d5c1981b8c34c35bccf445ba2cbbfd",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/MacOS/libjetbrains-toolbox-interop.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "c6ba8aedafcf4522e3db3f59ca0398c8bb0ff64e",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/MacOS/libjnidispatch.jnilib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "e75e33cbacc686d17e3f0cd0e4a862da26deb5ff",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/MacOS/libskiko-macos-arm64.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "a1b1587a6f61447edec66b3403ca252b2a702fdb",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jetbrains-toolbox-launcher.app",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "55f006195d170ab13054361be38d7a43769b0907",
+        "arch": "x86_64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/MacOS/printenv",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "6d02691e6e617a71f97a03e4d826441c8c0045d4",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jetbrains-toolbox-launcher.app",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "55f006195d170ab13054361be38d7a43769b0907",
+        "arch": "x86_64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jetbrains-toolbox-launcher.app/Contents/MacOS/jetbrains-toolbox-launcher",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "55f006195d170ab13054361be38d7a43769b0907",
+        "arch": "x86_64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/jspawnhelper",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "010a5624c952a855b52270271a391fa3545d81ee",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libawt.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "4c748cdcad5a825ecce411ca758ef94369fc129c",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libawt_lwawt.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "4666cbb699fc20fb02dab34384ded9dd646a9939",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libfontmanager.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "c814b52879996e84e3bae6568f8b4ac3a8266270",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libfreetype.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "c0529853530e5400092008f4613046da8370987a",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libj2gss.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "3c382516a369ca81cb755de2446eaaf1d624ab43",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libjaas.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "7e3630b027c6cacc502505a0351a1c55abe42a77",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libjava.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "d443e05a7fbc2a28949e45704a1f98773b80262c",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libjavajpeg.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "477a4cc1cfb499b697eed4a12f88d78a027978d9",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libjawt.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "13b45ef31a9a824b131403b168238c69f0f779f2",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libjimage.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "231685f48a9bea4763862a182cbf6dbf55d06c17",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libjli.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "2bc32007c0abe7b88f3712112a38b6ff2156c988",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libjsig.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "eb9c3791eb3cae6b0da7dba220240d20a2f5d50f",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libjsound.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "c3011a25b6e3af01d0e9dc14fdb553f0f621d992",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/liblcms.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "c5825cd0064d65319284d971e734a824ca2a4c82",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libmanagement.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "f830c32c2db0ac5270b77d064862ff964b8f7f19",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libmanagement_ext.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "a464362ccea17323bebd98e8f974a84d33181928",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libmlib_image.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "8864f3b51fc8bc6458b9b67471c918e1dae0d33f",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libnet.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "8ecebac2201cfe0bf31afe4bd6102a95bfb82c3e",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libnio.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "bbc42fdf9375896c82b1a5f9bc9535f29bdbd4ec",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libosx.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "db519ec05a2ec5be321d8111fe6639e0d24584cf",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libosxapp.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "2bc6d10806b2278566d36b49a61567b8dce0497d",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libosxkrb5.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "960c2b25c72844b42897ff636a3ebb64c3387c79",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libosxsecurity.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "edb876d9406078695c29684827b122800e8b89d2",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libosxui.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "31907e450f769a1d9c49c6848a9df085ec094863",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libprefs.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "46668e65abd6013e7031f96e2853a7b1545507d7",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libsplashscreen.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "ba02e17305c88c036be8c8c89009a23a8f48b8bc",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libverify.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "ad0fe54d9f04a777b1bd7e10434646e67ff24061",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/libzip.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "6eae2271dd2af186a11d369e2afe3316c439f095",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/server/libjsig.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "eb9c3791eb3cae6b0da7dba220240d20a2f5d50f",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/jre/Contents/Home/lib/server/libjvm.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "0a0e0483dc6ff7c52b05a3d6ff95b87aa1d7316e",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/MacOS/jetbrains-toolbox",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "a1629607c0d5c1981b8c34c35bccf445ba2cbbfd",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/MacOS/libjetbrains-toolbox-interop.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "c6ba8aedafcf4522e3db3f59ca0398c8bb0ff64e",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/MacOS/libjnidispatch.jnilib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "e75e33cbacc686d17e3f0cd0e4a862da26deb5ff",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/MacOS/libskiko-macos-arm64.dylib",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "a1b1587a6f61447edec66b3403ca252b2a702fdb",
+        "arch": "arm64"
+      },
+    {
+        "path": "jetbrains-toolbox-2.0.0.15286-arm64.dmg/JetBrains Toolbox.app/Contents/MacOS/printenv",
+        "digestAlgorithm": "SHA-256",
+        "cdhash": "6d02691e6e617a71f97a03e4d826441c8c0045d4",
+        "arch": "arm64"
+      }
+  ],
+  "issues": null
+}

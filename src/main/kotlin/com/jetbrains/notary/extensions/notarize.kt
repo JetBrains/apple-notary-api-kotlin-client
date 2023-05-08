@@ -4,6 +4,7 @@ import com.jetbrains.notary.NotaryClientV2
 import com.jetbrains.notary.models.Logs
 import com.jetbrains.notary.models.NewSubmissionRequest
 import com.jetbrains.notary.models.SubmissionResponse
+import com.jetbrains.notary.notaryClientJson
 import io.ktor.client.network.sockets.*
 import io.ktor.client.plugins.*
 import kotlinx.coroutines.*
@@ -106,7 +107,9 @@ suspend fun NotaryClientV2.notarize(
 
     logger.info("Requesting logs for submission '$submissionId'...")
     val logs = getSubmissionLog(submissionId)
-    val json = Json { prettyPrint = true }
+    val json = Json(notaryClientJson) {
+        prettyPrint = true
+    }
     logger.debug("Logs for submission '$submissionId':\n${json.encodeToString(logs)}")
 
     return NotarizationResult(
