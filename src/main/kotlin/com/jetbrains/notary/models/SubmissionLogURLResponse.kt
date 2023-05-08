@@ -82,7 +82,7 @@ sealed class Logs {
             val path: String?,
             val digestAlgorithm: String?,
             val cdhash: String?,
-            val arch: String?,
+            val arch: String? = null,
         )
 
         @Serializable
