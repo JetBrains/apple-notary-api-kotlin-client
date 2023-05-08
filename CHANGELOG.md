@@ -1,5 +1,16 @@
 # Change Log
 
+## [1.0.3](https://github.com/JetBrains/apple-notary-api-kotlin-client/tree/1.0.3) (2023-05-08)
+[View commits](https://github.com/JetBrains/apple-notary-api-kotlin-client/compare/1.0.2...1.0.3)
+
+**Closed issues:**
+
+- Handle NotaryAPI missing field at JSON deserialization [\#11](https://github.com/JetBrains/apple-notary-api-kotlin-client/issues/11)
+
+**Merged pull requests:**
+
+- Handle NotaryAPI missing field at JSON deserialization [\#10](https://github.com/JetBrains/apple-notary-api-kotlin-client/pull/10) ([@ArchangelX360](https://github.com/ArchangelX360))
+
 ## [1.0.2](https://github.com/JetBrains/apple-notary-api-kotlin-client/tree/1.0.2) (2023-03-22)
 [View commits](https://github.com/JetBrains/apple-notary-api-kotlin-client/compare/1.0.1-2.0.0...1.0.2)
 
