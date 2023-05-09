@@ -157,6 +157,6 @@ class NotaryClientV2(
         // ```
         // Probably due to an invalid response Content-Type.
         val logs = logReponse.bodyAsText()
-        return Json.decodeFromString(logs)
+        return notaryClientJson.decodeFromString(logs)
     }
 }
