@@ -1,5 +1,16 @@
 # Change Log
 
+## [1.0.5](https://github.com/JetBrains/apple-notary-api-kotlin-client/tree/1.0.5) (2023-05-09)
+[View commits](https://github.com/JetBrains/apple-notary-api-kotlin-client/compare/1.0.4...1.0.5)
+
+**Merged pull requests:**
+
+- Use notaryClientJson when deserializing submission log [\#12](https://github.com/JetBrains/apple-notary-api-kotlin-client/pull/12) ([@kropp](https://github.com/kropp))
+
+## [1.0.4](https://github.com/JetBrains/apple-notary-api-kotlin-client/tree/1.0.4) (2023-05-08)
+[View commits](https://github.com/JetBrains/apple-notary-api-kotlin-client/compare/1.0.3...1.0.4)
+
+
 ## [1.0.3](https://github.com/JetBrains/apple-notary-api-kotlin-client/tree/1.0.3) (2023-05-08)
 [View commits](https://github.com/JetBrains/apple-notary-api-kotlin-client/compare/1.0.2...1.0.3)
 
