@@ -1,5 +1,12 @@
 # Change Log
 
+## [2.0.0](https://github.com/JetBrains/apple-notary-api-kotlin-client/tree/2.0.0) (2025-02-10)
+[View commits](https://github.com/JetBrains/apple-notary-api-kotlin-client/compare/1.0.5...2.0.0)
+
+**Merged pull requests:**
+
+- \[ktor\] Bump ktor client version to 3.0.3  [\#13](https://github.com/JetBrains/apple-notary-api-kotlin-client/pull/13) ([@shchuko](https://github.com/shchuko))
+
 ## [1.0.5](https://github.com/JetBrains/apple-notary-api-kotlin-client/tree/1.0.5) (2023-05-09)
 [View commits](https://github.com/JetBrains/apple-notary-api-kotlin-client/compare/1.0.4...1.0.5)
 
