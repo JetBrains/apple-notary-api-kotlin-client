@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-    val ktorVersion = "2.1.1"
+    val ktorVersion = "3.0.3"
     api("io.ktor:ktor-client-core:$ktorVersion")
     api("io.ktor:ktor-client-logging:$ktorVersion")
     api("io.ktor:ktor-client-content-negotiation:$ktorVersion")
