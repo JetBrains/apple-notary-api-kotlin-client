@@ -1,7 +1,7 @@
 # Change Log
 
-## [2.0.0](https://github.com/JetBrains/apple-notary-api-kotlin-client/tree/2.0.0) (2025-02-10)
-[View commits](https://github.com/JetBrains/apple-notary-api-kotlin-client/compare/1.0.5...2.0.0)
+## [2.0.1](https://github.com/JetBrains/apple-notary-api-kotlin-client/tree/2.0.1) (2025-02-10)
+[View commits](https://github.com/JetBrains/apple-notary-api-kotlin-client/compare/1.0.5...2.0.1)
 
 **Merged pull requests:**
 
