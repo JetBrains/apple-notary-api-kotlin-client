@@ -3,7 +3,6 @@ package com.jetbrains.notary
 import com.amazonaws.auth.AWSStaticCredentialsProvider
 import com.amazonaws.auth.BasicSessionCredentials
 import com.amazonaws.services.s3.AmazonS3ClientBuilder
-import com.amazonaws.services.s3.model.ObjectMetadata
 import com.amazonaws.services.s3.model.PutObjectRequest
 import com.amazonaws.services.s3.model.PutObjectResult
 import com.jetbrains.notary.auth.AppStoreConnectAPIKey
@@ -22,8 +21,6 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import java.nio.file.Path
-import kotlin.io.path.fileSize
-import kotlin.io.path.inputStream
 import kotlin.time.Duration.Companion.minutes
 
 @OptIn(ExperimentalSerializationApi::class)
@@ -95,15 +92,10 @@ class NotaryClientV2(
         // Thanks to the folks that built https://github.com/indygreg/PyOxidizer, we got it's us-west-2...
         s3Region: String = "us-west-2",
     ): PutObjectResult? {
-        val inputStream = filepath.inputStream().buffered()
-        val metadata = ObjectMetadata().also {
-            it.contentLength = filepath.fileSize()
-        }
         val request = PutObjectRequest(
             attributes.bucket,
             attributes.`object`,
-            inputStream,
-            metadata,
+            filepath.toFile(),
         )
         val credentials = BasicSessionCredentials(
             attributes.awsAccessKeyId,
