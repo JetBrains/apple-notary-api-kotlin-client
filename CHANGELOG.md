@@ -1,5 +1,12 @@
 # Change Log
 
+## [2.0.2](https://github.com/JetBrains/apple-notary-api-kotlin-client/tree/2.0.2) (2026-05-21)
+[View commits](https://github.com/JetBrains/apple-notary-api-kotlin-client/compare/2.0.1...2.0.2)
+
+**Merged pull requests:**
+
+- \[s3\] Upload file directly so AWS SDK can properly retry [\#14](https://github.com/JetBrains/apple-notary-api-kotlin-client/pull/14) ([@IvanPashchenko](https://github.com/IvanPashchenko))
+
 ## [2.0.1](https://github.com/JetBrains/apple-notary-api-kotlin-client/tree/2.0.1) (2025-02-10)
 [View commits](https://github.com/JetBrains/apple-notary-api-kotlin-client/compare/1.0.5...2.0.1)
 
