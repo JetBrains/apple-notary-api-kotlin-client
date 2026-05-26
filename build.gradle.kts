@@ -8,7 +8,6 @@ plugins {
 
     id("maven-publish")
     id("signing")
-    id("org.hildan.github.changelog") version "1.13.1"
 }
 
 group = "org.jetbrains"
@@ -34,10 +33,6 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
-}
-
-changelog {
-    futureVersionTag = project.version.toString()
 }
 
 val sourcesJar by tasks.creating(Jar::class) {

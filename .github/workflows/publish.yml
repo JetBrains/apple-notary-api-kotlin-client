@@ -1,16 +1,18 @@
-name: Publish on releases
+name: Publish on release
 
 on:
   release:
     types:
-      - created
+      - published
 
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
 
       - name: Set up JDK
         uses: actions/setup-java@v2
@@ -18,8 +20,13 @@ jobs:
           distribution: 'zulu'
           java-version: 17
 
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v6
+
+      - name: Test build before release
+        run: ./gradlew build
+
       - name: Build and publish to Space Packages
-        uses: gradle/gradle-build-action@v2
         env:
           # GPG keys for signing plugin (sign maven artifacts)
           # see https://docs.gradle.org/current/userguide/signing_plugin.html#sec:in-memory-keys
@@ -28,5 +35,4 @@ jobs:
 
           ORG_GRADLE_PROJECT_spaceUsername: ${{ secrets.JB_SPACE_CLIENT_ID }}
           ORG_GRADLE_PROJECT_spacePassword: ${{ secrets.JB_SPACE_CLIENT_SECRET }}
-        with:
-          arguments: publish -Pversion=${{ github.event.release.tag_name }}
+        run: ./gradlew build publish -Pversion=${{ github.event.release.tag_name }}
