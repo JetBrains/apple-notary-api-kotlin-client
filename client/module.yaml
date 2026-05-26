@@ -14,6 +14,7 @@ test-dependencies:
 repositories:
   - id: toSpace
     url: https://packages.jetbrains.team/maven/p/ij/intellij-dependencies
+    publish: true
     credentials:
       file: ../credentials.properties
       usernameKey: spaceUsername
