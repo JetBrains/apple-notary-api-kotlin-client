@@ -18,6 +18,6 @@ jobs:
       - name: Create credential file
         run: echo "JB_SPACE_CLIENT_ID=${{ secrets.JB_SPACE_CLIENT_ID }}\nJB_SPACE_CLIENT_SECRET=${{ secrets.JB_SPACE_CLIENT_SECRET }}" > credentials.properties
       - name: Replace version key by tag in `client/module.yaml`
-        run: "sed -i -E 's/^([[:space:]]*)#[[:space:]]*version:.*/\1version: ${{ github.event.release.tag_name }}/' client/module.yaml"
+        run: "sed -i -E 's/^([[:space:]]*)#[[:space:]]*version:.*/\\1version: ${{ github.event.release.tag_name }}/' client/module.yaml"
       - name: Publish to Space Packages
         run: ./kotlin publish toSpace
