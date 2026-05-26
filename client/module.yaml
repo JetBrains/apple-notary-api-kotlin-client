@@ -1,0 +1,53 @@
+product: jvm/lib
+
+dependencies:
+  - $libs.ktor.client.core
+  - $libs.ktor.client.logging
+  - $libs.ktor.client.content.negotiation
+  - $libs.ktor.serialization.kotlinx.json
+  - $libs.aws.java.sdk.s3
+  - $libs.java.jwt
+
+test-dependencies:
+  - $kotlin.test
+
+repositories:
+  - id: toSpace
+    url: https://packages.jetbrains.team/maven/p/ij/intellij-dependencies
+    credentials:
+      file: ../credentials.properties
+      usernameKey: spaceUsername
+      passwordKey: spacePassword
+
+settings:
+  jvm:
+    jdk:
+      version: 21
+      distributions: [ temurin ]
+  kotlin:
+    serialization:
+      enabled: true
+  publishing:
+    enabled: true
+    group: org.jetbrains
+    artifactId: apple-notary-api-kotlin-client
+    # Keep the following key, it is swapped at publishing time by CI until Kotlin Toolchain supports overridding properties like that from the CLI
+    # version:
+    signArtifacts: false # TODO: add support for signing
+    publishSources: true
+    pom:
+      description: Apple Notary API client for Kotlin
+      url: https://github.com/JetBrains/apple-notary-api-kotlin-client.git
+      scm:
+        connection: scm:git:git://github.com/JetBrains/apple-notary-api-kotlin-client.git
+        developerConnection: scm:git:ssh://git@github.com/JetBrains/apple-notary-api-kotlin-client.git
+        url: https://github.com/JetBrains/apple-notary-api-kotlin-client.git
+      developers:
+        - name: Titouan Bion
+          id: ArchangelX360
+          email: titouan.bion@gmail.com
+      licenses:
+        - name: MIT
+          url: https://opensource.org/license/mit
+        - name: The Apache License, Version 2.0
+          url: https://www.apache.org/licenses/LICENSE-2.0.txt
