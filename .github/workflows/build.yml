@@ -12,15 +12,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
-
-      - name: Set up JDK
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'zulu'
-          java-version: 17
-
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v6
-
-      - name: Assemble and test
-        run: ./gradlew build
+      - name: Run tests
+        run: ./kotlin test
+      # TODO: delete that
+      - name: Replace version key by tag in `client/module.yaml`
+        run: "sed -i -E 's/^([[:space:]]*)#[[:space:]]*version:.*/\1version: ${{ github.event.release.tag_name }}/' client/module.yaml"
+      - name: Show `client/module.yaml`
+        run: cat client/module.yaml
