@@ -39,10 +39,7 @@ settings:
     pom:
       description: Apple Notary API client for Kotlin
       url: https://github.com/JetBrains/apple-notary-api-kotlin-client.git
-      scm:
-        connection: scm:git:git://github.com/JetBrains/apple-notary-api-kotlin-client.git
-        developerConnection: scm:git:ssh://git@github.com/JetBrains/apple-notary-api-kotlin-client.git
-        url: https://github.com/JetBrains/apple-notary-api-kotlin-client.git
+      scm: https://github.com/JetBrains/apple-notary-api-kotlin-client.git
       developers:
         - name: Titouan Bion
           id: ArchangelX360
